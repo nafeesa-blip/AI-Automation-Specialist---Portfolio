@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project Mila: large-scale reading comprehension dataset generation | Nafeesa A. Portfolio</title>
+<meta name="description" content="A high-throughput synthetic data pipeline that turns raw English articles into structured reading comprehension questions. Each article produces 7 multiple-choice questions across four skill categories, for a final dataset of 1.5 million Q&amp;A pairs ready for LLM training and evaluation.">
+<meta property="og:title" content="Project Mila: large-scale reading comprehension dataset generation | Nafeesa A. Portfolio">
+<meta property="og:description" content="A high-throughput synthetic data pipeline that turns raw English articles into structured reading comprehension questions. Each article produces 7 multiple-choice questions across four skill categories, for a final dataset of 1.5 million Q&amp;A pairs ready for LLM training and evaluation.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>LLM · Synthetic data</span></div>
+  <span class="kicker">Case study</span>
+  <h1>Project Mila: large-scale reading comprehension dataset generation</h1>
+  <span class="role">AI Engineer | LLM Data Pipeline Developer</span>
+  <p class="sub">A high-throughput synthetic data pipeline that turns raw English articles into structured reading comprehension questions. Each article produces 7 multiple-choice questions across four skill categories, for a final dataset of 1.5 million Q&amp;A pairs ready for LLM training and evaluation.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Project Mila: large-scale reading comprehension dataset generation">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Scale</span><b>1.5M Q&amp;A pairs</b></div><div class="fact"><span>Model</span><b>gpt-oss-20b on vLLM</b></div><div class="fact"><span>Type</span><b>LLM synthetic data pipeline</b></div><div class="fact"><span>Output</span><b>JSON + CSV with error report</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery two"><a class="figure" href="../images/mila-pipeline.svg" target="_blank" rel="noopener"><img src="../images/mila-pipeline.svg" alt="Pipeline diagram: raw articles, prompt design, vLLM inference with gpt-oss-20b, JSON repair, validation with a retry queue, cleaning and enrichment, and 1.5 million Q&amp;A pairs exported as JSON and CSV" loading="eager"><span class="cap">Pipeline overview.</span></a><a class="figure" href="../images/mila-dataset-sample.png" target="_blank" rel="noopener"><img src="../images/mila-dataset-sample.png" alt="Spreadsheet sample of the generated dataset with ID, source text, language, source URL, type, processing date, question, options, answer and analysis columns" loading="lazy"><span class="cap">Sample of the generated dataset: questions, options, answers and analysis.</span></a><a class="figure" href="../images/mila-question-types.png" target="_blank" rel="noopener"><img src="../images/mila-question-types.png" alt="Spreadsheet sample showing question type, word count, subject and domain metadata for each generated question" loading="lazy"><span class="cap">Metadata on every record: question type, word count, subject and domain.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>Creating reading comprehension data by hand is slow and expensive. Naive LLM generation at scale breaks down in three ways: malformed JSON outputs, repetitive question phrasing (“What…”, “Which…”, “Why…”), and inconsistent quality across millions of generations. The pipeline had to be fast, diverse and self-healing.</p>
+      <h2>The solution</h2>
+      <p>I built an end-to-end pipeline that runs gpt-oss-20b on vLLM in large GPU batches, uses carefully engineered prompts for varied questions, repairs and validates every model response, retries anything that fails, and cleans and tags each record before it enters the dataset.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>High-throughput inference</b>gpt-oss-20b runs on vLLM with prefix caching and bfloat16, processing batches of 1,000 articles at once on GPU.</li><li><b>Structured question design</b>Each article generates 7 questions: 2 detail comprehension, 2 inference and reasoning, 2 opinion and attitude, and 1 main idea.</li><li><b>Creative prompt engineering</b>Prompts ban overused starters (What, Which, How, Why) and push varied phrasing, so questions are diverse rather than templated.</li><li><b>Multi-strategy JSON repair</b>A 5-step recovery system fixes escaping errors, missing commas, truncated outputs and incomplete objects, salvaging responses that would otherwise be discarded.</li><li><b>Validation layer</b>Every question is checked for required fields, exactly 4 options and a valid A–D answer before it enters the dataset.</li><li><b>Automatic retry loop</b>Failed articles are re-queued and reprocessed with a lower temperature (0.9 → 0.7) and a stricter prompt.</li><li><b>Post-processing and enrichment</b>Boilerplate phrases and HTML are removed, emails and phone numbers are anonymized, options are formatted consistently, and each record is tagged with domain, education stage, question type, word count and a unique hash ID.</li></ol>
+      <h2>Key features</h2>
+      <ul class="ticks"><li>1.5 million validated Q&amp;A pairs</li><li>7 questions per article across 4 cognitive skill categories</li><li>5-strategy JSON repair engine</li><li>Field-level validation and answer normalization</li><li>Automatic retry queue with adjusted temperature and prompt</li><li>Anonymization of emails and phone numbers</li><li>Metadata: domain, education stage, question type, word count, hash ID</li><li>Custom error tracker with a full JSON error report</li><li>Checkpoints to Google Drive and GPU memory cleanup for long runs</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>1.5M validated Q&amp;A pairs generated</li><li>7 questions per article across 4 skill categories</li><li>Output in both JSON and CSV, with an error report for auditability</li><li>A self-healing pipeline that recovers malformed outputs instead of losing them</li></ul>
+      <h2>Challenges and solutions</h2><div class="cs-table"><table><thead><tr><th>Challenge</th><th>Solution</th></tr></thead><tbody>
+<tr><td>The LLM returned invalid or truncated JSON at scale</td><td>A 5-strategy JSON repair engine plus a retry queue</td></tr>
+<tr><td>Repetitive question patterns</td><td>Prompt constraints banning common starters, with high-temperature sampling</td></tr>
+<tr><td>Maintaining quality across 1.5M outputs</td><td>Field-level validation and answer and option normalization</td></tr>
+<tr><td>GPU memory limits during long runs</td><td>Batching, periodic cache clearing and checkpointing</td></tr></tbody></table></div>
+<p class="note">This work is closely related to my <a href="../data-annotation.html">data annotation and AI training data</a> services.</p>
+      <div class="pager"><a href="webinar-lead-automation.html"><span>← Previous project</span><b>Webinar lead automation: round-robin assignment &amp; reminders</b></a><a class="next" href="ai-lead-intelligence-crm-automation.html"><span>Next project →</span><b>AI-powered lead intelligence &amp; CRM automation</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>vLLM</span><span>PyTorch (CUDA)</span><span>gpt-oss-20b</span><span>Pandas</span><span>NumPy</span><span>Regex</span><span>Google Colab</span><span>tqdm</span></div></div>
+      <div class="side-card dark"><h3>Need something similar?</h3><p>Tell me what you want to automate and I’ll reply with the simplest setup that gets it done.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Project Mila: large-scale reading comprehension dataset generation">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="ai-lead-intelligence-crm-automation.html"><img src="../images/ai-lead-research-crm-enrichment.png" alt="" loading="lazy"><div><span>Lead generation · n8n</span><b>AI-powered lead intelligence &amp; CRM automation</b><p>A daily n8n pipeline that finds, verifies, scores and syncs B2B leads to HubSpot with personalized outreach.</p></div></a><a class="more-card" href="ai-recruiter-outreach-agent.html"><img src="../images/recruiter-outreach-agent.gif" alt="" loading="lazy"><div><span>AI agent · n8n</span><b>AI recruiter outreach agent</b><p>An n8n agent that writes personalized recruiter emails, gets human approval in Slack and handles follow-ups.</p></div></a><a class="more-card" href="business-research-strategic-analysis.html"><img src="../images/research-dashboard.png" alt="" loading="lazy"><div><span>Research · Strategy</span><b>Business research &amp; strategic analysis report</b><p>A 17-tab research report covering finance, marketing, competitors and risk, with an executive dashboard.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
+</script>
+</body>
+</html>

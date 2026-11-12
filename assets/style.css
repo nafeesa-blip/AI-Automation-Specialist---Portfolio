@@ -365,4 +365,10 @@ section.white{background:#fff;border-block:1px solid var(--line)}
 .proj-grid.three .pbody b{font-size:1.08rem}
 @media(max-width:1000px){.proj-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.proj-grid.three .pcard:nth-child(3){display:none}}
 @media(max-width:720px){.proj-grid,.proj-grid.three{grid-template-columns:1fr}.proj-grid.three .pcard:nth-child(3){display:flex}}
+.cs-table{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.cs-table table{width:100%;border-collapse:collapse;font-size:.93rem}
+.cs-table th{text-align:left;padding:.8rem 1rem;background:var(--soft);color:var(--accent-d);font:700 .78rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.cs-table td{padding:.85rem 1rem;border-top:1px solid var(--line);color:#334155;vertical-align:top}
+.cs-table td:first-child{font-weight:600;color:var(--ink);width:45%}
+.gallery.two>.figure:first-child:nth-last-child(3){grid-column:1/-1}
 
