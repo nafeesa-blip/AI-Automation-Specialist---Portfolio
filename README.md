@@ -24,6 +24,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Page | File |
 |---|---|
 | Home | `index.html` |
+| All projects (case studies) | `projects.html` |
 | Data annotation (AI training data) | `data-annotation.html` |
 | AI lead intelligence & CRM automation | `projects/ai-lead-intelligence-crm-automation.html` |
 | AI recruiter outreach agent | `projects/ai-recruiter-outreach-agent.html` |
