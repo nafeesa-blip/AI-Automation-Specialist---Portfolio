@@ -12,8 +12,8 @@ Open `index.html` in any browser.
 4. Your site appears at `https://<your-username>.github.io/<repo-name>/`.
 
 ## Customize
-- Replace `your-email@example.com` in `index.html` with your real email.
+- The contact form sends to the email in the `mailto:` link inside `index.html`; change it there if needed.
 - Add GitHub, LinkedIn or Upwork links next to the Email button.
 
-## Hero video
-`images/hero-loop.mp4` is the looping background video in the first screen. Replace it with your own MP4 (keep the same name) to change it.
+## Hero illustration
+The first screen shows an animated workflow illustration (inline SVG inside `index.html`, no image file needed). Theme colours are set as CSS variables at the top of the `<style>` block (`--accent`, `--navy`, etc.).
