@@ -1,884 +1,373 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nafeesa | AI Automation Specialist & Developer</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            900: '#4c1d95',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .glow-effect {
-            box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.3);
-        }
-        /* Full-width editorial theme inspired by Altufan Ulu's calm architectural layout. */
-        :root { color-scheme: light; --paper:#f5f3ee; --ink:#292823; --muted:#77756e; --line:#dfdcd3; --accent:#b96f43; }
-        html { scroll-padding-top: 5rem; }
-        body { background:var(--paper); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; }
-        nav { background:rgba(245,243,238,.94)!important; border-color:var(--line)!important; backdrop-filter:blur(16px); }
-        nav .text-slate-300, nav .text-slate-100 { color:#5f5c55!important; }
-        nav .text-brand-400, nav .hover\:text-brand-400:hover { color:var(--accent)!important; }
-        nav .bg-brand-600 { background:var(--accent)!important; border-radius:2px!important; box-shadow:none!important; }
-        nav .bg-brand-600:hover { background:#9d5d37!important; }
-        header { min-height:100svh; display:flex; align-items:center; padding-top:7rem!important; padding-bottom:4rem!important; background:linear-gradient(110deg,rgba(29,29,25,.83),rgba(29,29,25,.32)),url('images/hero-poster.webp') center/cover no-repeat; }
-        header > div:first-child { display:none; }
-        header .max-w-7xl { width:100%; max-width:1440px; }
-        header .max-w-3xl { max-width:850px; margin-left:0; text-align:left; }
-        header .glass-card { color:#f5f3ee!important; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.25)!important; backdrop-filter:blur(8px); }
-        header h1 { max-width:12ch; color:#fff; font-size:clamp(3rem,8vw,7rem); line-height:.99; letter-spacing:-.07em; }
-        header h1 .text-transparent { color:#e3a77f!important; background:none!important; -webkit-text-fill-color:initial!important; }
-        header p { max-width:42rem; color:rgba(255,255,255,.82)!important; }
-        header .bg-brand-600 { background:var(--paper)!important; color:var(--ink)!important; border-radius:2px!important; box-shadow:none!important; }
-        header .bg-brand-600:hover { background:var(--accent)!important; color:#fff!important; }
-        header .border-slate-700 { border-color:rgba(255,255,255,.5)!important; border-radius:2px!important; }
-        header .grid > div { border-radius:2px!important; border-color:rgba(255,255,255,.18)!important; }
-        section { padding-block:clamp(4.5rem,8vw,7.5rem)!important; }
-        section .max-w-7xl { max-width:1240px; }
-        section.bg-slate-900\/30, section.bg-slate-900\/20 { background:transparent!important; }
-        section.border-slate-900, footer.border-slate-900 { border-color:var(--line)!important; }
-        section h2 { color:var(--ink); letter-spacing:-.055em; }
-        section p { color:var(--muted); }
-        .glass-card { background:var(--surface,#fffefa)!important; border-color:var(--line)!important; border-radius:3px!important; box-shadow:none!important; }
-        section .text-slate-100, section .text-white, footer .text-white { color:var(--ink)!important; }
-        section .text-slate-300, section .text-slate-400 { color:var(--muted)!important; }
-        section .text-brand-400, section .text-brand-300, section .text-brand-200 { color:var(--accent)!important; }
-        section .bg-brand-950, section .bg-brand-900\/50 { background:#eee8df!important; }
-        section .border-brand-500 { border-color:var(--accent)!important; }
-        section .bg-brand-600 { background:var(--accent)!important; border-radius:2px!important; box-shadow:none!important; }
-        section .rounded-2xl, section .rounded-xl, section .rounded-lg { border-radius:3px!important; }
-        section .border-slate-800 { border-color:var(--line)!important; }
-        section .bg-slate-800, section .bg-slate-900 { background:#eeece6!important; }
-        section input, section textarea { background:#fffefa!important; color:var(--ink)!important; border-color:#cbc6bb!important; border-radius:2px!important; }
-        section input::placeholder, section textarea::placeholder { color:#89867e!important; }
-        footer { background:var(--paper)!important; color:var(--muted)!important; }
-        @media(max-width:767px) { header { align-items:flex-end; padding-bottom:3.5rem!important; } header .max-w-3xl { text-align:left; } header h1 { font-size:clamp(3rem,13vw,5rem); } }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nafeesa A. | AI Automation Specialist</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#050508;--surface:#0d0d13;--ink:#fff;--muted:#a6a6b3;--line:#24242d;--accent:#ff4a36;--glow:rgba(255,74,54,.28);box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:Archivo,system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.4rem}
+#bar{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:40}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(.9rem + env(safe-area-inset-top,0px)) 1.6rem .9rem;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+nav.solid{background:rgba(5,5,8,.84);backdrop-filter:blur(14px);border-color:var(--line)}
+nav b{font:800 1.25rem Archivo,sans-serif}
+nav div{display:flex;gap:1.4rem;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:#d4d4de;transition:color .2s}
+nav a:hover{color:#fff}
+.pill{background:none;border:1px solid #3a3a46;color:#fff;border-radius:99px;padding:.3rem .85rem;cursor:pointer;font:inherit;font-size:.85rem}
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#050508 url(images/hero-poster.webp) center/cover no-repeat}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0,rgba(5,5,8,.6) 34%,rgba(5,5,8,.1) 72%)}
+.hero-in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding-bottom:5.5rem}
+.hero h1{font-size:clamp(2.8rem,7.2vw,6.2rem);font-weight:900;letter-spacing:-.045em;line-height:.96;max-width:13em}
+.hero p{color:#c4c4d0;max-width:34rem;margin:1.3rem 0 1.8rem;font-size:1.12rem}
+.btn{display:inline-block;padding:.9rem 1.7rem;border:0;border-radius:99px;background:#fff;color:#000;font:600 1rem Inter,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-3px);background:var(--accent);color:#fff}
+.cue{position:absolute;z-index:1;right:1.6rem;bottom:2.2rem;display:flex;align-items:center;gap:.8rem;color:#c4c4d0;font-size:.85rem}
+.cue::after{content:"";width:2px;height:54px;background:linear-gradient(var(--accent),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq div{display:flex;gap:2.6rem;width:max-content;animation:mq 34s linear infinite}
+.marq span{font:700 1.05rem Archivo,sans-serif;color:var(--muted);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding-block:4.5rem}
+h2{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:900;letter-spacing:-.035em;margin-bottom:1.6rem}
+.lead{color:var(--muted);max-width:34rem;margin:0}
+.story{height:340vh;position:relative;padding:0}
+.story-in{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.sts{position:relative;min-height:11rem;margin-top:1.4rem}
+.st{position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+.st.on{opacity:1;transform:none}
+.st h3{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.6rem}
+.st p{color:var(--muted);margin:0;max-width:30rem}
+.pipe{position:relative;display:grid;gap:1.1rem;padding-left:2.2rem}
+.pipe::before,.pipe::after{content:"";position:absolute;left:.55rem;top:1.6rem;bottom:1.6rem;width:2px;background:var(--line)}
+.pipe::after{background:var(--accent);bottom:auto;height:calc((100% - 3.2rem)*var(--p,0));box-shadow:0 0 16px var(--accent)}
+.pn{position:relative;padding:1.1rem 1.3rem;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--muted);transition:border-color .4s,color .4s,box-shadow .4s}
+.pn::before{content:"";position:absolute;left:-1.9rem;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--bg);border:2px solid var(--line);transition:.4s}
+.pn b{display:block;color:#fff;font:700 1.1rem Archivo,sans-serif}
+.pn.on{border-color:var(--accent);color:#fff;box-shadow:0 0 40px var(--glow)}
+.pn.on::before{border-color:var(--accent);background:var(--accent)}
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;align-items:start}
+.ex{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.5rem;transition:border-color .3s,box-shadow .3s}
+.ex:hover,.ex.open{border-color:var(--accent)}
+.ex.open{box-shadow:0 20px 50px var(--glow)}
+.ex-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;padding:0;background:none;border:0;color:inherit;text-align:left;cursor:pointer}
+.ex-h h3{font-size:1.4rem}
+.pl{flex:none;width:2.2rem;height:2.2rem;display:grid;place-items:center;border:1px solid #3a3a46;border-radius:50%;font-size:1.3rem;transition:transform .3s,background .3s}
+.ex.open .pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent)}
+.ex>p{margin:.7rem 0 0;color:var(--muted)}
+.ex-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
+.ex.open .ex-more{grid-template-rows:1fr}
+.ex-more>div{overflow:hidden}
+.ex ul{margin:1.1rem 0 0;padding-left:1.1rem;font-size:.95rem}
+.bars{margin-top:1.1rem;display:grid;gap:.5rem;font-size:.8rem;color:var(--muted)}
+.bars i{display:block;height:8px;border-radius:99px;background:#fff;width:100%;transition:width 1.2s .2s}
+.bars i.a{background:var(--accent);width:0}
+.ex.open .bars i:not(.a){width:30%}
+.ex.open .bars i.a{width:72%}
+.band{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;padding:3rem 2.2rem;border:1px solid var(--line);border-radius:28px;background:#000 url(images/bg-section.webp) center/cover no-repeat}
+.band h2{margin-bottom:1rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 1rem;margin-top:2rem}
+.stats b,.kpi b{display:block;font:900 clamp(2.4rem,5vw,3.8rem)/1 Archivo,sans-serif;letter-spacing:-.03em}
+.stats span,.kpi span{color:var(--muted);font-size:.95rem}
+.feed{background:rgba(5,5,8,.76);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:1.3rem;min-height:330px}
+.feed h3{font-size:1.05rem;margin-bottom:.8rem}
+.feed ul{margin:0;padding:0}
+.feed li{list-style:none;display:flex;gap:.7rem;padding:.6rem 0;border-top:1px solid var(--line);font-size:.95rem;animation:fi .5s}
+.feed li::before{content:"";flex:none;width:8px;height:8px;margin-top:.55rem;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.feed small,.rep small{display:block;margin-top:.8rem;color:var(--muted)}
+@keyframes fi{from{opacity:0;transform:translateY(-8px)}}
+.rep{margin-top:1.4rem;border:1px solid var(--line);border-radius:28px;padding:2rem;background:var(--surface)}
+.rep h3{font-size:1.4rem;margin-bottom:1.4rem}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem}
+.kpi b{font-size:clamp(2rem,4vw,2.8rem)}
+.spark{display:block;width:100%;height:150px;margin:1.6rem 0 1rem}
+.spark path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.2s .2s}
+.rep.in .spark path{stroke-dashoffset:0}
+.rec{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.rec span{padding:.4rem 1rem;border:1px solid #3a3a46;border-radius:99px;font-size:.9rem;color:var(--muted)}
+.rec span.on{background:#fff;color:#000;border-color:#fff;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chips span{padding:.45rem 1rem;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:.95rem;transition:transform .2s,border-color .2s}
+.chips span:hover{transform:translateY(-4px);border-color:var(--accent)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4rem;counter-reset:s}
+.steps div{counter-increment:s;position:relative;padding-top:3.2rem}
+.steps div::before{content:counter(s);position:absolute;top:0;left:0;width:2.3rem;height:2.3rem;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font:800 1rem Archivo,sans-serif;box-shadow:0 0 0 .35rem var(--glow)}
+.steps div::after{content:"";position:absolute;top:1.15rem;left:3rem;right:.4rem;border-top:2px dashed var(--line)}
+.steps div:last-child::after{display:none}
+.steps p{margin:.3rem 0 0;color:var(--muted)}
+.contact{border:1px solid var(--line);border-radius:28px;padding:3.5rem 2rem;background:#000 url(images/bg-contact.webp) center/cover no-repeat}
+.contact h2{margin-bottom:.8rem}
+.cf{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;max-width:760px}
+.cf label.f{display:grid;gap:.35rem;font-size:.9rem;color:var(--muted)}
+.cf .full{grid-column:1/-1}
+.cf input[type=text],.cf input[type=email],.cf textarea{width:100%;padding:.8rem 1rem;border:1px solid #33333f;border-radius:12px;background:rgba(5,5,8,.7);color:#fff;font:inherit}
+.needs{display:flex;flex-wrap:wrap;gap:.6rem}
+.needs label{position:relative}
+.needs input{position:absolute;opacity:0;inset:0}
+.needs span{display:block;padding:.5rem 1rem;border:1px solid #3a3a46;border-radius:99px;color:#fff;cursor:pointer}
+.needs input:checked+span{background:#fff;color:#000;border-color:#fff}
+.needs input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding:2rem 1.6rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);margin-top:4rem}
+footer div{display:flex;gap:.8rem}
+.proj{display:grid;grid-template-columns:1fr;gap:1.6rem;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:1.6rem;margin-bottom:1.6rem;box-shadow:inset 0 3px 0 var(--accent)}
+.proj .shot{perspective:1200px}
+.proj .shot button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in;transform:rotateX(4deg);transform-origin:50% 100%;transition:transform .35s;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.proj .shot button:hover{transform:rotateX(0) translateY(-4px)}
+.proj .shot img{display:block;width:100%;height:auto}
+.proj .shot small{display:block;margin-top:.7rem;color:var(--muted);font-size:.85rem}
+.proj .shot .stack{display:grid;gap:1rem}
+.proj h3{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em}
+.proj .role{color:var(--accent);font-weight:600;margin:.4rem 0 1rem}
+.proj p{margin:0 0 1.2rem;color:var(--muted);max-width:68ch}
+.proj h4{margin:0 0 .6rem;font:700 1rem Archivo,sans-serif}
+.proj ul{margin:0 0 1.2rem;padding-left:1.1rem;color:var(--muted);max-width:68ch}
+.proj ul li{margin-bottom:.25rem}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);overflow:auto;display:none;padding:calc(1rem + env(safe-area-inset-top,0px)) 1rem 1rem;cursor:zoom-out}
+.lb.on{display:block}
+.lb img{display:block;width:max(100%,1100px);max-width:none;margin:0 auto;border-radius:10px;background:#fff}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+html.paused *{animation-play-state:paused!important}
+@media(min-width:900px){.proj{grid-template-columns:1.2fr 1fr;align-items:center}.proj.rev{grid-template-columns:1fr 1.2fr}.proj.rev .shot{order:2}}
+@media(max-width:800px){.band{grid-template-columns:1fr;padding:2rem 1.2rem}nav a.l{display:none}.steps div::after{display:none}.cue{display:none}.cf{grid-template-columns:1fr}.story{height:auto;padding-block:4rem}.story-in{position:static;height:auto;grid-template-columns:1fr;gap:2rem}.sts{min-height:0}.st{position:static;opacity:1;transform:none;margin-bottom:1.4rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero-vid{display:none}.js .rv{opacity:1;transform:none}.spark path{stroke-dashoffset:0}}
+/* Full-width editorial theme inspired by Altufan Ulu's calm, architectural layout. */
+:root{color-scheme:light;--bg:#f5f3ee;--surface:#fffefa;--ink:#292823;--muted:#77756e;--line:#dfdcd3;--accent:#b96f43;--glow:rgba(185,111,67,.15)}
+html{scroll-padding-top:5.4rem}body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:1rem;line-height:1.7}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-.035em}
+.wrap{width:min(100% - 3rem,1440px);max-width:1440px;padding-inline:0}
+#bar{height:2px}nav{padding:1rem max(1.5rem,calc((100vw - 1440px)/2));background:rgba(245,243,238,.92);border-bottom-color:var(--line);backdrop-filter:blur(16px)}nav.solid{background:rgba(245,243,238,.95);border-color:var(--line)}nav b{font:800 1.05rem Manrope,sans-serif;letter-spacing:-.04em;color:var(--ink)}nav a{color:#5f5c55;font-size:.84rem}nav a:hover{color:var(--accent)}.pill{border-color:#cfcac0;color:var(--ink);font-size:.8rem}.pill:hover{border-color:var(--accent);color:var(--accent)}
+.hero{height:100svh;min-height:680px;background-color:#24241f;background-image:linear-gradient(90deg,rgba(24,24,21,.62),rgba(24,24,21,.08)),url(images/hero-poster.webp);background-position:center;background-size:cover}.hero-vid{filter:saturate(.68)}.hero-fade{background:linear-gradient(0deg,rgba(24,24,21,.72),rgba(24,24,21,.05) 75%),linear-gradient(90deg,rgba(24,24,21,.32),transparent 75%)}.hero-in{justify-content:center;padding-top:5rem;padding-bottom:3rem}.hero h1{max-width:11ch;font-size:clamp(3.5rem,8.2vw,8rem);font-weight:600;letter-spacing:-.075em;line-height:.98}.hero p{max-width:37rem;color:rgba(255,255,255,.82);font-size:1.08rem;margin:1.5rem 0 2rem}.btn{border-radius:2px;padding:.9rem 1.4rem;background:#f5f3ee;color:#292823;font-size:.9rem}.btn:hover{background:var(--accent);color:#fff}.cue{right:max(1.5rem,calc((100vw - 1440px)/2));color:#fff}
+main.wrap{width:100%;max-width:none}.marq{padding:.9rem max(1.5rem,calc((100vw - 1440px)/2));border-color:var(--line);mask-image:none;-webkit-mask-image:none}.marq div{animation-duration:48s}.marq span{font:600 .82rem Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#77756e}section{padding:clamp(4.5rem,9vw,8.5rem) max(1.5rem,calc((100vw - 1240px)/2))}h2{font-size:clamp(2.4rem,5vw,4.5rem);font-weight:600;letter-spacing:-.065em;margin-bottom:1.3rem}.lead,.st p,.proj p,.proj ul{color:var(--muted)}
+.story{height:300vh;padding:0}.story-in{width:min(100% - 3rem,1240px);max-width:1240px}.story-in h2{max-width:11ch}.pn{background:var(--surface);border-radius:3px;border-color:var(--line);color:var(--muted)}.pn b{font:700 1rem Manrope,sans-serif;color:var(--ink)}.pn.on{border-color:var(--accent);box-shadow:0 8px 30px var(--glow)}.pipe::before{background:var(--line)}
+.ex-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:0 2.2rem}.ex{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:1.5rem 0}.ex:hover,.ex.open{border-color:var(--accent)}.ex.open{box-shadow:none}.ex-h h3{font-size:1.22rem;font-weight:600}.ex>p{color:var(--muted);font-size:.94rem}.pl{border-radius:50%;color:var(--accent);border-color:var(--line)}.ex.open .pl{background:var(--accent);color:white}.band{grid-template-columns:1.15fr .85fr;border-radius:0;border:0;background-color:#e9e5dc;background-image:none;padding:clamp(2rem,5vw,4.5rem);gap:3rem}.band .lead{color:#68665f}.stats b,.kpi b{color:var(--ink);font-family:Manrope,sans-serif}.stats span,.kpi span{color:var(--muted)}.feed{background:#f8f6f1;backdrop-filter:none;border-radius:3px;border-color:#d9d4c9}.feed h3{font:700 1rem Manrope,sans-serif;color:var(--ink)}.feed li{border-color:var(--line);color:#55534d}.feed small,.rep small{color:var(--muted)}.feed li::before{background:var(--accent);box-shadow:none}.rep{border-color:var(--line);border-radius:3px;background:var(--surface);padding:clamp(1.5rem,4vw,3rem)}.rep h3{font:700 1.2rem Manrope,sans-serif}.rec span{border-color:var(--line);color:var(--muted)}.rec span.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1.5rem,4vw,4rem);background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:2.5rem 0;margin:0;box-shadow:none}.proj.rev{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.proj.rev .shot{order:2}.proj .shot button{transform:none;border:0;border-radius:2px;background:#e7e3da;box-shadow:none}.proj .shot button:hover{transform:translateY(-3px)}.proj h3{font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:600}.proj .role{color:var(--accent);font-size:.85rem}.chips span{background:transparent;border-color:#d6d2c8;color:#5e5b54;border-radius:2px;font-size:.82rem}.chips span:hover{border-color:var(--accent)}.steps{gap:1.8rem}.steps div::before{background:var(--accent);box-shadow:none}.steps h3{font-size:1.08rem}.steps p{font-size:.92rem}#contact{padding-bottom:5rem}.contact{border:0;border-radius:0;background:#e9e5dc;padding:clamp(2rem,5vw,4.5rem)}.contact .lead{color:#68665f}.cf input[type=text],.cf input[type=email],.cf textarea{border-color:#cbc6bb;border-radius:2px;background:rgba(255,254,250,.72);color:var(--ink)}.cf input:focus,.cf textarea:focus{outline-color:var(--accent)}.needs span{border-radius:2px;border-color:#c9c3b7;color:var(--ink)}.needs input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}footer{margin-top:0;padding:2rem max(1.5rem,calc((100vw - 1440px)/2));border-color:var(--line);color:var(--muted);background:var(--bg)}.lb{background:rgba(30,29,26,.96)}
+@media(min-width:1500px){.hero-in{width:min(100% - 3rem,1440px)}}
+@media(max-width:900px){.proj,.proj.rev{grid-template-columns:1fr;gap:1.4rem}.proj.rev .shot{order:0}.band{grid-template-columns:1fr}.story{height:auto;padding-block:4rem}.story-in{width:min(100% - 3rem,1240px)}}
+@media(max-width:800px){.wrap{width:calc(100% - 2.5rem)}nav{padding:.85rem 1.25rem}nav div{gap:.8rem}.hero{min-height:620px}.hero-in{justify-content:flex-end;padding-bottom:5rem}section{padding:4.5rem 1.25rem}.story{padding:4rem 0}.story-in{width:calc(100% - 2.5rem)}.band{padding:2rem 1.25rem}.proj{padding:2rem 0}footer{padding:1.5rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){.hero-vid{display:none}}
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
-                    N
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-lg tracking-tight">Nafeesa</span>
-                    <span class="text-xs text-brand-400 font-medium">AI Automation Specialist</span>
-                </div>
-            </a>
-            
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-                <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
-                <a href="#services" class="hover:text-brand-400 transition-colors">Services</a>
-                <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
-                <a href="#workflow" class="hover:text-brand-400 transition-colors">Workflow</a>
-                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-500 transition-all shadow-lg shadow-brand-600/30 hover:shadow-brand-500/55">Let's Talk</a>
-            </div>
-
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-slate-900 border-b border-slate-800">
-            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-400">About</a>
-            <a href="#services" class="block py-2 text-slate-300 hover:text-brand-400">Services</a>
-            <a href="#projects" class="block py-2 text-slate-300 hover:text-brand-400">Projects</a>
-            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400">Skills</a>
-            <a href="#workflow" class="block py-2 text-slate-300 hover:text-brand-400">Workflow</a>
-            <a href="#contact" class="block text-center mt-3 py-2.5 rounded-xl bg-brand-600 text-white font-semibold">Let's Talk</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl mx-auto text-center space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold tracking-wide">
-                    <i class="fa-solid fa-sparkles text-brand-400"></i> AI Automation & Integration Specialist
-                </div>
-                
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
-                    Building Intelligent <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400">Workflows & Solutions</span>
-                </h1>
-                
-                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-                    Hi, I'm <strong class="text-white font-semibold">Nafeesa</strong>. I streamline business operations, optimize workflows, and simplify complex processes using AI & LLM integration, Python, n8n, Make, and advanced automations.
-                </p>
-
-                <div class="flex flex-wrap justify-center gap-4 pt-4">
-                    <a href="#projects" class="px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold transition-all shadow-xl shadow-brand-600/30 flex items-center gap-3 group">
-                        Explore Projects <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#contact" class="px-8 py-4 rounded-xl glass-card hover:bg-slate-900 border border-slate-700 text-white font-bold transition-all flex items-center gap-3">
-                        <i class="fa-regular fa-envelope text-brand-400"></i> Get in Touch
-                    </a>
-                </div>
-
-                <!-- Stats / Quick Highlights -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12">
-                    <div class="glass-card p-4 rounded-2xl text-center">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-400">100%</div>
-                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Custom Workflows</div>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl text-center">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-400">n8n & Make</div>
-                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Advanced Automation</div>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl text-center">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-400">OpenAI / Claude</div>
-                        <div class="text-xs sm:text-sm text-slate-400 mt-1">LLM Integration</div>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl text-center">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-400">CRM & API</div>
-                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Seamless Sync</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 border-t border-slate-900 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                        About Me
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold">Transforming Complexity into Smart, Scalable Automation</h2>
-                    <p class="text-slate-300 leading-relaxed">
-                        I combine cutting-edge artificial intelligence and robust automation technologies to develop customized, reliable, and scalable solutions that improve business efficiency and drive exponential growth.
-                    </p>
-                    <p class="text-slate-300 leading-relaxed">
-                        Whether you are looking to automate repetitive operational tasks, integrate powerful LLM agents into your software, synchronize CRMs like HubSpot or Salesforce, or build custom data pipelines—I turn your complex business requirements into high-performing digital systems.
-                    </p>
-                    <div class="pt-2">
-                        <blockquote class="border-l-4 border-brand-500 pl-4 italic text-brand-200 font-medium">
-                            "Let's turn your complex business requirements into smart, technology-driven solutions!"
-                        </blockquote>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 hover:border-brand-500/50 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-brand-900/50 text-brand-400 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">AI & LLM Integration</h3>
-                        <p class="text-sm text-slate-400">Embedding OpenAI, Claude, and Gemini into workflows for intelligent decision making & content creation.</p>
-                    </div>
-                    
-                    <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 hover:border-brand-500/50 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-brand-900/50 text-brand-400 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Workflow Automation</h3>
-                        <p class="text-sm text-slate-400">Building bulletproof multi-step automated processes using n8n, Make, and Zapier.</p>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 hover:border-brand-500/50 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-brand-900/50 text-brand-400 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Python & APIs</h3>
-                        <p class="text-sm text-slate-400">Custom Python scripting, REST APIs, webhooks, OCR, and advanced data extraction pipelines.</p>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 hover:border-brand-500/50 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-brand-900/50 text-brand-400 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">CRM & E-commerce</h3>
-                        <p class="text-sm text-slate-400">Automating HubSpot, Salesforce, Zoho, Shopify, and WooCommerce for seamless business sync.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                    What I Can Do For You
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold">Comprehensive Automation & AI Services</h2>
-                <p class="text-slate-400">Tailored technical solutions designed to maximize productivity and eliminate manual friction.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">AI Automation & Workflows</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> n8n, Make & Zapier workflows</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> OpenAI, Claude & Gemini integration</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> AI agents & LLM pipelines</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Large-scale content & image generation</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-terminal"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Python & Data Solutions</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Custom Python scripting & automation</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Advanced data extraction & processing</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Business intelligence & research</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Data enrichment & information management</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-plug"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">API & Business Automation</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> REST API & webhook integrations</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Third-party platform connectivity</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Automated real-time data sync</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Custom API-based architectures</li>
-                    </ul>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-address-book"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">CRM & E-commerce Automation</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> HubSpot, Salesforce & Zoho CRM</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Lead generation & enrichment pipelines</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> CRM migration & deduplication</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Shopify & WooCommerce automation</li>
-                    </ul>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-file-invoice"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">AI, Image & Document Processing</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> AI-powered image generation & processing</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> PDF data extraction & OCR solutions</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Intelligent Document Processing (IDP)</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Automated structured data capture</li>
-                    </ul>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="glass-card p-8 rounded-3xl border border-slate-800 hover:border-brand-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Research & Business Intelligence</h3>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> B2B company & contact research</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Competitor & market analysis</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Financial & business intelligence</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-400 mt-1"></i> Automated web research agents</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section (Dynamic & Easy to Add Many Projects) -->
-    <section id="projects" class="py-20 border-t border-slate-900 bg-slate-900/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                        Featured Works
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold">My Automation & AI Projects</h2>
-                    <p class="text-slate-400">Explore production-ready automation workflows, LLM agents, and data systems.</p>
-                </div>
-                
-                <!-- Category Filter Buttons -->
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="project-filters">
-                    <button class="px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold transition-all filter-btn" data-filter="all">All Projects</button>
-                    <button class="px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white text-xs font-semibold transition-all filter-btn" data-filter="ai">AI & LLMs</button>
-                    <button class="px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white text-xs font-semibold transition-all filter-btn" data-filter="workflow">Workflows</button>
-                    <button class="px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white text-xs font-semibold transition-all filter-btn" data-filter="crm">CRM & E-com</button>
-                    <button class="px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white text-xs font-semibold transition-all filter-btn" data-filter="python">Python & Scraping</button>
-                </div>
-            </div>
-
-            <!-- Projects Grid (Easily add more projects here by duplicating the project-card div) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="ai">
-                    <div class="h-48 bg-gradient-to-br from-purple-900/50 via-slate-900 to-indigo-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-brand-500/10 text-9xl font-extrabold pointer-events-none">AI</div>
-                        <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold w-max">AI Agent / LLM</span>
-                        <h3 class="text-xl font-bold text-white">Multi-Agent Customer Support & Knowledge Base Bot</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            An intelligent multi-agent support system built with OpenAI GPT-4 and Claude 3.5, connected via n8n to instantly resolve customer queries and auto-escalate complex tickets.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">OpenAI</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">n8n</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Vector DB</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="workflow">
-                    <div class="h-48 bg-gradient-to-br from-blue-900/50 via-slate-900 to-cyan-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-blue-500/10 text-9xl font-extrabold pointer-events-none">N8N</div>
-                        <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold w-max">Workflow Automation</span>
-                        <h3 class="text-xl font-bold text-white">Automated Lead Enrichment & Scoring Pipeline</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Make & n8n pipeline that automatically fetches incoming leads, runs company research via webhooks, scores them based on firmographics, and updates HubSpot CRM in real-time.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">n8n</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">HubSpot</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Clearbit API</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="python">
-                    <div class="h-48 bg-gradient-to-br from-emerald-900/50 via-slate-900 to-teal-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-emerald-500/10 text-9xl font-extrabold pointer-events-none">OCR</div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold w-max">Python & OCR</span>
-                        <h3 class="text-xl font-bold text-white">Intelligent Document Processing & Invoice OCR</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Custom Python OCR script utilizing advanced vision models to extract line items from complex PDF invoices, validate tax IDs, and push structured JSON into ERP systems.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">OCR</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">REST API</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="crm">
-                    <div class="h-48 bg-gradient-to-br from-amber-900/50 via-slate-900 to-orange-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-amber-500/10 text-9xl font-extrabold pointer-events-none">CRM</div>
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold w-max">CRM & E-commerce</span>
-                        <h3 class="text-xl font-bold text-white">Shopify & Salesforce E-commerce Sync Engine</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Two-way webhook integration synchronizing Shopify orders, customer profiles, and inventory status with Salesforce and Zoho CRM with automated exception handling.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Shopify</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Salesforce</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Webhooks</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="ai">
-                    <div class="h-48 bg-gradient-to-br from-rose-900/50 via-slate-900 to-pink-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-rose-500/10 text-9xl font-extrabold pointer-events-none">GEN</div>
-                        <span class="px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-bold w-max">AI Image & Content</span>
-                        <h3 class="text-xl font-bold text-white">Automated Fashion & Product Image Generation Pipeline</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            End-to-end studio fashion image generation pipeline ensuring garment fidelity and model identity preservation using advanced generative AI and automated cloud GPU nodes.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Generative AI</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">AWS GPU</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all flex flex-col project-card" data-category="python">
-                    <div class="h-48 bg-gradient-to-br from-indigo-900/50 via-slate-900 to-violet-950 p-6 flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 text-indigo-500/10 text-9xl font-extrabold pointer-events-none">DATA</div>
-                        <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold w-max">Market Intelligence</span>
-                        <h3 class="text-xl font-bold text-white">Automated B2B Directory Scraper & Email Finder</h3>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Robust Python web-scraping script designed for extracting verified business directory links, harvesting contact emails, and validating records for outbound sales teams.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">BeautifulSoup</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Proxies</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                                <span class="text-xs text-brand-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-circle text-[8px] animate-pulse text-emerald-400"></i> Production Ready</span>
-                                <a href="#contact" class="text-xs font-bold text-white hover:text-brand-400 flex items-center gap-1">Request Demo <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <!-- Instructions for adding more projects -->
-            <div class="mt-12 p-6 rounded-2xl glass-card border border-brand-500/20 text-center max-w-2xl mx-auto">
-                <p class="text-sm text-slate-300"><i class="fa-solid fa-lightbulb text-brand-400 mr-2"></i><strong>Want to add more projects?</strong> Simply copy any <code>&lt;div class="glass-card rounded-3xl..."&gt;</code> block inside <code>index.html</code> and update the title, description, and tags!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                    Expertise & Stack
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold">My Skills & Technologies</h2>
-                <p class="text-slate-400">The powerful toolset I use to build scalable automation architectures.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Skill Group 1 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">AI & LLMs</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">OpenAI</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Claude</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Google Gemini</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Generative AI</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">AI Agents</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 2 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-bolt"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Automation</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">n8n</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Make (Integromat)</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Zapier</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Webhooks</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 3 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Programming</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Python</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">REST APIs</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">JSON</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 4 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">CRM & E-commerce</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">HubSpot</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Salesforce</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Zoho CRM</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Shopify</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">WooCommerce</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 5 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Document & OCR</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">OCR Solutions</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">PDF Extraction</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Smart Document IDP</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 6 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-image"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Image Processing</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">AI Image Gen</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Batch Processing</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Visual AI Pipelines</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 7 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-chart-pie"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Data & Intelligence</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Business Intelligence</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Data Enrichment</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Market Research</span>
-                    </div>
-                </div>
-
-                <!-- Skill Group 8 -->
-                <div class="glass-card p-6 rounded-2xl space-y-4 border border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-cloud"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Cloud & Infrastructure</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">AWS</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">GPU Processing</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-medium border border-slate-800">Vercel Deployment</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow / How I Work -->
-    <section id="workflow" class="py-20 border-t border-slate-900 bg-slate-900/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                    Process
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold">How I Work</h2>
-                <p class="text-slate-400">A structured, results-driven approach to delivering robust automation.</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-6">
-                <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 relative">
-                    <div class="text-brand-400 font-extrabold text-2xl">01</div>
-                    <h3 class="font-bold text-lg">Discovery</h3>
-                    <p class="text-xs text-slate-400">Understand your business goals and specific operational requirements.</p>
-                </div>
-                
-                <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 relative">
-                    <div class="text-brand-400 font-extrabold text-2xl">02</div>
-                    <h3 class="font-bold text-lg">Strategy</h3>
-                    <p class="text-xs text-slate-400">Identify high-impact opportunities for AI and automation integration.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 relative">
-                    <div class="text-brand-400 font-extrabold text-2xl">03</div>
-                    <h3 class="font-bold text-lg">Tooling</h3>
-                    <p class="text-xs text-slate-400">Select the optimal stack (n8n, Python, LLMs, APIs) for your architecture.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 relative">
-                    <div class="text-brand-400 font-extrabold text-2xl">04</div>
-                    <h3 class="font-bold text-lg">Development</h3>
-                    <p class="text-xs text-slate-400">Develop, rigorous testing, and fine-tune solutions for maximum reliability.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl space-y-3 border border-slate-800 relative">
-                    <div class="text-brand-400 font-extrabold text-2xl">05</div>
-                    <h3 class="font-bold text-lg">Deployment</h3>
-                    <p class="text-xs text-slate-400">Deliver reliable, scalable results with ongoing support and documentation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Work With Me -->
-    <section class="py-20 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                        Why Choose Me
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold">Driven by Accuracy, Quality & Reliability</h2>
-                    <p class="text-slate-300 leading-relaxed">
-                        I bring a unique combination of deep AI expertise, Python development, and workflow automation mastery. Every project is approached with a rigorous, business-first mindset.
-                    </p>
-                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-brand-600/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <h4 class="font-bold text-sm">Hands-on Experience</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Diverse technical project history across industries.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-brand-600/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <h4 class="font-bold text-sm">Solution-Oriented</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Focused on solving real business bottlenecks.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-brand-600/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <h4 class="font-bold text-sm">Complex Systems</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Experience with large-scale multi-agent architectures.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-brand-600/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <h4 class="font-bold text-sm">Clear Communication</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Transparent updates and steadfast delivery.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-brand-500/30 glow-effect space-y-6">
-                    <h3 class="text-2xl font-bold">Ready to Automate Your Business?</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Have a business process you want to automate or a challenging technical project in mind? Let's discuss your project and build smart solutions that help your business work smarter.
-                    </p>
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-center gap-3 text-sm text-slate-300">
-                            <i class="fa-solid fa-envelope text-brand-400 w-5"></i>
-                            <span>nafeesa@example.com</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-300">
-                            <i class="fa-brands fa-linkedin text-brand-400 w-5"></i>
-                            <span>linkedin.com/in/nafeesa-ai</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-300">
-                            <i class="fa-brands fa-github text-brand-400 w-5"></i>
-                            <span>github.com/nafeesa-ai</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 border-t border-slate-900 bg-slate-900/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-slate-800 space-y-8">
-                <div class="text-center space-y-3">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-950 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                        Let's Connect
-                    </div>
-                    <h2 class="text-3xl font-extrabold">Start Your Project Today</h2>
-                    <p class="text-slate-400 text-sm max-w-lg mx-auto">Fill out the form below or reach out directly. I'll get back to you promptly to discuss your automation needs.</p>
-                </div>
-
-                <form id="contact-form" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-300 uppercase">Your Name</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-500 focus:outline-none text-white text-sm" placeholder="John Doe">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-300 uppercase">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-500 focus:outline-none text-white text-sm" placeholder="john@company.com">
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-300 uppercase">Project Type / Interest</label>
-                        <select class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-500 focus:outline-none text-white text-sm">
-                            <option>AI & LLM Integration</option>
-                            <option>n8n / Make Workflow Automation</option>
-                            <option>Python Scripting & Data Extraction</option>
-                            <option>CRM & E-commerce Automation</option>
-                            <option>AI Image & Document OCR Processing</option>
-                            <option>Other Custom Solution</option>
-                        </select>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-300 uppercase">Project Details / Message</label>
-                        <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-500 focus:outline-none text-white text-sm" placeholder="Describe your business process or automation requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
-                        <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                    <div id="form-success" class="hidden text-center text-emerald-400 text-sm font-semibold">
-                        <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your message has been sent successfully.
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-900 bg-slate-950 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <p>&copy; 2026 Nafeesa. All rights reserved. Built with AI & Automation expertise.</p>
-            <div class="flex justify-center gap-6 text-slate-400">
-                <a href="https://github.com" target="_blank" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                <a href="mailto:nafeesa@example.com" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-envelope text-lg"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript for Filtering Projects & Mobile Menu -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Project Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-brand-600', 'text-white');
-                    b.classList.add('glass-card', 'text-slate-300');
-                });
-                // Add active class to clicked
-                btn.classList.add('bg-brand-600', 'text-white');
-                btn.classList.remove('glass-card', 'text-slate-300');
-
-                const filter = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Contact Form Submission Mock
-        const contactForm = document.getElementById('contact-form');
-        const formSuccess = document.getElementById('form-success');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            contactForm.reset();
-            formSuccess.classList.remove('hidden');
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 5000);
-        });
-    </script>
+<body>
+<div id="bar"></div>
+<nav id="nav"><b>Nafeesa A.</b><div><a class="l" href="#story">How it works</a><a class="l" href="#services">Services</a><a class="l" href="#projects">Projects</a><a href="#contact">Contact</a><button id="pause" class="pill" type="button">Pause motion</button></div></nav>
+<header class="hero">
+  <video class="hero-vid" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.webp" aria-hidden="true"><source src="images/hero-loop.mp4" type="video/mp4"></video>
+  <div class="hero-fade"></div>
+  <div class="wrap hero-in" style="width:100%">
+    <h1>I turn messy business work into smart automation.</h1>
+    <p>I’m Nafeesa A., an AI Automation Specialist. I connect LLMs, Python and your existing tools so repetitive tasks run on their own, reliably and at scale.</p>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+  <div class="cue">Scroll to explore</div>
+</header>
+<main class="wrap">
+<div class="marq" aria-hidden="true"><div><span>OpenAI</span><span>Claude</span><span>Google Gemini</span><span>n8n</span><span>Make</span><span>Zapier</span><span>Python</span><span>REST APIs</span><span>Webhooks</span><span>HubSpot</span><span>Salesforce</span><span>Zoho CRM</span><span>Shopify</span><span>WooCommerce</span><span>Google Sheets</span><span>Gmail</span><span>Slack</span><span>OCR</span><span>AWS</span></div></div><section class="story" id="story"><div class="story-in wrap"><div><h2>How a lead moves through an automated workflow.</h2><div class="sts"><div class="st"><h3>Capture</h3><p>A form, webhook or API call brings the lead in and logs it automatically.</p></div><div class="st"><h3>Clean and enrich</h3><p>Duplicates are checked, data is cleaned and company details are added with AI.</p></div><div class="st"><h3>Score and route</h3><p>An LLM scores each lead from 0 to 100 and sends hot ones to the right person with an alert.</p></div><div class="st"><h3>Follow up</h3><p>Personalized emails go out on a schedule and stop when the lead replies. Everything is logged in the CRM.</p></div></div></div><div class="pipe"><div class="pn"><b>1. Capture</b>A form, webhook or API call brings the lead in and logs it automatically.</div><div class="pn"><b>2. Clean and enrich</b>Duplicates are checked, data is cleaned and company details are added with AI.</div><div class="pn"><b>3. Score and route</b>An LLM scores each lead from 0 to 100 and sends hot ones to the right person with an alert.</div><div class="pn"><b>4. Follow up</b>Personalized emails go out on a schedule and stop when the lead replies.</div></div></div></section>
+<section id="services" class="rv"><h2>What I can do for you.</h2><div class="ex-grid"><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>AI &amp; workflow automation</h3><span class="pl" aria-hidden="true">+</span></button><p>Workflows and agents that handle the repetitive parts of your business.</p><div class="ex-more"><div><ul><li>n8n, Make and Zapier</li><li>OpenAI, Claude and Gemini</li><li>AI agents and LLM pipelines</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>Python &amp; data</h3><span class="pl" aria-hidden="true">+</span></button><p>Scripts that collect, clean and enrich data so you can act on it.</p><div class="ex-more"><div><ul><li>Data extraction and processing</li><li>Web research automation</li><li>Business intelligence</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>API integration</h3><span class="pl" aria-hidden="true">+</span></button><p>Your tools talking to each other without manual copy and paste.</p><div class="ex-more"><div><ul><li>REST APIs and webhooks</li><li>Third-party integrations</li><li>Automated data sync</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>CRM &amp; e-commerce</h3><span class="pl" aria-hidden="true">+</span></button><p>Cleaner pipelines and stores that update themselves.</p><div class="ex-more"><div><ul><li>HubSpot, Salesforce, Zoho</li><li>Lead enrichment and deduplication</li><li>Shopify and WooCommerce</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>Documents &amp; images</h3><span class="pl" aria-hidden="true">+</span></button><p>Turn PDFs into structured data and generate visuals in bulk.</p><div class="ex-more"><div><ul><li>OCR and PDF extraction</li><li>AI image generation at scale</li><li>Intelligent document processing</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article><article class="ex"><button class="ex-h" type="button" aria-expanded="false"><h3>Research &amp; intelligence</h3><span class="pl" aria-hidden="true">+</span></button><p>Fast, accurate answers about companies, competitors and markets.</p><div class="ex-more"><div><ul><li>B2B company and contact research</li><li>Competitor and pricing analysis</li><li>Financial research</li></ul><div class="bars" aria-hidden="true"><span>Manual work</span><i></i><span>Automated</span><i class="a"></i><span>Illustrative</span></div></div></div></article></div></section>
+<section id="results" class="rv">
+  <div class="band">
+    <div><h2>Automation that keeps running.</h2><p class="lead">Workflows that capture, score, route and follow up on their own, so your team steps in only when a person is needed.</p>
+      <div class="stats"><div><b data-n="1" data-p="~" data-s="M">~1M</b><span>AI images generated</span></div><div><b data-n="8">8</b><span>Projects shown below</span></div><div><b data-n="3">3</b><span>AI platforms integrated</span></div><div><b data-n="3">3</b><span>CRM platforms automated</span></div></div></div>
+    <div class="feed"><h3>Workflow feed</h3><ul id="feed"></ul><small>Sample activity, shown for illustration.</small></div>
+  </div>
+  <div class="rep rv"><h3>Automation report (sample)</h3>
+    <div class="kpis"><div class="kpi"><b data-n="1284">1,284</b><span>Leads processed</span></div><div class="kpi"><b data-n="2" data-s=" min">2 min</b><span>Average response time</span></div><div class="kpi"><b data-n="31" data-s="%">31%</b><span>Qualified rate</span></div><div class="kpi"><b data-n="0" data-s=".4%">0.4%</b><span>Error rate</span></div></div>
+    <svg class="spark" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 105 C40 100 60 85 100 88 S160 60 200 62 S270 40 310 30 S370 20 400 10"/></svg>
+    <div class="rec"><span>Recommended action</span><span class="on">Scale</span><span>Tune</span><span>Pause</span></div>
+    <small>Sample data, shown for illustration.</small></div>
+</section>
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="proj">
+    <div class="shot">
+      <button type="button" aria-label="Open the workflow diagram full size" data-zoom><img src="images/lead-intelligence-workflow.png" alt="n8n workflow: a daily schedule trigger runs AI query generation, Apollo company search, Hunter email lookup, AI enrichment, duplicate check, cleaning, AI lead scoring, then HubSpot, Google Sheets and Gmail outreach" loading="lazy"></button>
+      <small>Click the diagram to view it full size.</small>
+    </div>
+    <div>
+      <h3>AI-powered lead intelligence &amp; CRM automation</h3>
+      <div class="role">AI Automation Specialist | n8n Workflow Developer</div>
+      <p>I built an advanced n8n automation system for B2B lead discovery, company research, contact enrichment and CRM management. The workflow connects Apollo, Hunter, OpenAI, HubSpot and Google Sheets to find potential leads, extract business information, verify contact details, write personalized outreach messages and update CRM records automatically. Conditional logic, data validation, duplicate detection and automated reporting make it a complete lead intelligence pipeline that needs very little manual work.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>n8n</span><span>AI Automation</span><span>API Integration</span><span>HubSpot</span><span>Lead Generation</span></div>
+    </div>
+  </article>
+  <article class="proj rev">
+    <div class="shot">
+      <button type="button" aria-label="Open the recruiter outreach agent graphic full size" data-zoom><img src="images/recruiter-outreach-agent.gif" alt="Animated diagram of the recruiter outreach loop around an n8n hub: contacts, personalize, approve in Slack, send with Gmail, track replies, report" loading="lazy"></button>
+      <small>Click the animation to view it full size.</small>
+    </div>
+    <div>
+      <h3>AI recruiter outreach agent</h3>
+      <div class="role">AI Automation Developer | n8n Workflow Specialist</div>
+      <p>I built an AI-powered recruiter outreach system with n8n, OpenAI, Gmail and Slack. It manages recruiter contacts, writes personalized emails and runs follow-up sequences, while people approve every email before it goes out. It is designed to streamline recruitment outreach and improve engagement through intelligent automation.</p>
+      <h4>Key features</h4>
+      <ul>
+        <li>AI-powered personalized email generation</li>
+        <li>Automated Gmail outreach and follow-ups</li>
+        <li>CRM and CSV contact integration</li>
+        <li>AI-based reply classification</li>
+        <li>Duplicate prevention and unsubscribe handling</li>
+        <li>Slack notifications and email approvals</li>
+        <li>Outreach tracking and reporting</li>
+      </ul>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>n8n</span><span>AI Agent Development</span><span>OpenAI API</span><span>Email Automation</span><span>API Integration</span></div>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="shot">
+      <div class="stack">
+        <button type="button" aria-label="Open the executive dashboard page full size" data-zoom><img src="images/research-dashboard.png" alt="Executive summary dashboard tab with KPI scores, financial snapshot, distribution, technology, competitive and risk summaries" loading="lazy"></button>
+        <button type="button" aria-label="Open the strategic priorities page full size" data-zoom><img src="images/research-priorities.png" alt="Report tab with the top three strategic priorities and the investment thesis and recommendation" loading="lazy"></button>
+      </div>
+      <small>Sample pages from the report. Click an image to view it full size.</small>
+    </div>
+    <div>
+      <h3>Business research &amp; strategic analysis report</h3>
+      <div class="role">Business Research Analyst | Market Research &amp; Strategic Planning</div>
+      <p>I created a comprehensive business research report with 17 spreadsheet tabs covering company overview, financial and sales analysis, marketing strategy, product strategy, technology audit, social media analytics, competitor analysis, risk assessment, subscriptions, distribution, logistics, brand partnerships, website analytics, financial insights and an executive dashboard. The report highlights key performance indicators, market trends, business risks and growth opportunities to support data-driven business decisions.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>Market Research</span><span>Business Analysis</span><span>Competitive Analysis</span><span>Strategic Planning</span><span>Financial Analysis</span></div>
+    </div>
+  </article>
+  <article class="proj rev">
+    <div class="shot">
+      <div class="stack">
+        <button type="button" aria-label="Open the spot the difference image pairs full size" data-zoom><img src="images/spot-difference-pairs.png" alt="Two generated spot the difference image pairs, a kids' treehouse scene and a forest treehouse scene, with the differences circled in red" loading="lazy"></button>
+        <button type="button" aria-label="Open the Python code screenshot full size" data-zoom><img src="images/spot-difference-code.png" alt="Python code for an error tracking class used in the image generation pipeline" loading="lazy"></button>
+      </div>
+      <small>Generated image pairs with differences circled, and part of the Python pipeline. Click an image to view it full size.</small>
+    </div>
+    <div>
+      <h3>AI-powered spot the difference image generation &amp; dataset creation</h3>
+      <div class="role">AI Engineer | Python Developer | Dataset Generation Specialist</div>
+      <p>I created a large-scale spot the difference project that generated approximately 1 million images for visual puzzle creation. Using AI tools and Python-based workflows, I produced image pairs with subtle differences, including object changes, color variations, additions and removals. I focused on image quality, visual consistency and dataset organization to support engaging puzzles and scalable content production.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>Python</span><span>Artificial Intelligence</span><span>Generative AI</span><span>Data Processing</span><span>Prompt Engineering</span></div>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="shot">
+      <button type="button" aria-label="Open the invoice generator workflow diagram full size" data-zoom><img src="images/invoice-generator-workflow.png" alt="Four-step workflow: enter invoice details, run a Python script, generate a PDF, then save or print the invoice" loading="lazy"></button>
+      <small>Planned workflow of the application. Click the diagram to view it full size.</small>
+    </div>
+    <div>
+      <h3>Custom Windows invoice generator with PDF export</h3>
+      <div class="role">Python Developer | Desktop Application Developer</div>
+      <p>I designed a simple Windows invoice generator that creates professional invoices from one consistent custom template. The proposed application supports manual invoice entry, automatic total calculations, invoice numbering and dates, payment status tracking and PDF generation. Users can save, download and print invoices while keeping a local history of previous ones. It is designed for Windows 10 and 11 with a friendly interface and no subscription-based accounting software.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>Python</span><span>PDF</span><span>Data Extraction</span><span>File Management</span></div>
+    </div>
+  </article>
+  <article class="proj rev">
+    <div class="shot">
+      <button type="button" aria-label="Open the payroll automation screenshot full size" data-zoom><img src="images/payroll-automation.png" alt="Google Sheets payroll sheet with a Payroll Automation menu, the Apps Script code editor, and a Send Payroll Data to freee HR dialog showing processing steps and a success status" loading="lazy"></button>
+      <small>Google Sheets menu, Apps Script code and the send dialog. Click the image to view it full size.</small>
+    </div>
+    <div>
+      <h3>Google Apps Script payroll automation &amp; freee HR API integration</h3>
+      <div class="role">Google Apps Script &amp; API Integration Developer</div>
+      <p>I built a Google Apps Script automation that streamlines payroll processing between Google Sheets and freee HR. The goal is to reduce manual work, minimize data entry errors and improve payroll processing efficiency.</p>
+      <h4>Key features</h4>
+      <ul>
+        <li>Extracts attendance, overtime and night shift data</li>
+        <li>Processes salary, allowances, transport expenses and deductions</li>
+        <li>Automates data mapping and formatting in Google Sheets</li>
+        <li>Integrates freee HR using REST APIs</li>
+        <li>Adds a custom Send button for easy data submission</li>
+        <li>Enables manual review before payroll data is sent</li>
+      </ul>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>Google Apps Script</span><span>REST API</span><span>Google Sheets</span><span>API Integration</span></div>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="shot">
+      <button type="button" aria-label="Open the CRM automation workflow diagram full size" data-zoom><img src="images/crm-lead-scoring-workflow.png" alt="n8n workflow in two parts: lead capture, HubSpot sync and AI scoring with hot lead alerts, then an automated follow-up email sequence that stops when the lead replies" loading="lazy"></button>
+      <small>The n8n workflow. Click the diagram to view it full size.</small>
+    </div>
+    <div>
+      <h3>CRM automation: lead capture, HubSpot, AI scoring &amp; follow-up</h3>
+      <div class="role">n8n &amp; CRM Automation Developer</div>
+      <p>Inbound leads were sitting in forms and inboxes, with no priority and slow follow-up. I built an n8n workflow that captures leads from a website form, creates or updates the contact in HubSpot without duplicates, and uses OpenAI to score each lead from 0 to 100 with a short reason. Hot leads create a task for a sales rep and trigger a Slack alert, while every lead gets a personalized follow-up email sequence that stops when they reply. All activity is logged on the contact. This is a sample project built with sample data.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>n8n</span><span>CRM Automation</span><span>OpenAI API</span><span>Lead Generation</span></div>
+    </div>
+  </article>
+  <article class="proj rev">
+    <div class="shot">
+      <button type="button" aria-label="Open the webinar lead automation diagram full size" data-zoom><img src="images/webinar-lead-automation.png" alt="Two n8n workflows: lead capture and round-robin advisor assignment with duplicate review, and an hourly reminder scheduler that sends 24 hour and 1 hour reminders" loading="lazy"></button>
+      <small>The two n8n workflows. Click the diagram to view it full size.</small>
+    </div>
+    <div>
+      <h3>Webinar lead automation: round-robin assignment &amp; reminders</h3>
+      <div class="role">n8n Automation Developer</div>
+      <p>Webinar sign-ups were handled manually, so leads were missed and follow-ups came late. I built an n8n workflow that captures leads from a website form, logs them in a Google Sheets tracker, flags duplicates for manual review and assigns advisors by round-robin. Each lead gets an instant welcome message, the advisor gets an alert, and automatic reminders go out 24 hours and 1 hour before the webinar. The tracker updates itself at every step. The result is faster response, even lead distribution and fewer no-shows. This is a sample project built with demo data.</p>
+      <h4>Skills and deliverables</h4>
+      <div class="chips"><span>n8n</span><span>Project Workflows</span><span>Google Sheets Automation</span><span>Lead Generation</span></div>
+    </div>
+  </article>
+</section><section id="skills" class="rv">
+  <h2>Skills and tools</h2>
+  <div class="chips"><span>OpenAI</span><span>Claude</span><span>Google Gemini</span><span>n8n</span><span>Make</span><span>Zapier</span><span>AI Agents</span><span>Python</span><span>JSON</span><span>REST APIs</span><span>Webhooks</span><span>HubSpot</span><span>Salesforce</span><span>Zoho CRM</span><span>Shopify</span><span>WooCommerce</span><span>OCR</span><span>AWS</span><span>GPU processing</span></div>
+</section><section id="process" class="rv">
+  <h2>How I work</h2>
+  <div class="steps">
+    <div><h3>Understand</h3><p>Your goals and how the work runs today.</p></div>
+    <div><h3>Find</h3><p>Where AI and automation save the most time.</p></div>
+    <div><h3>Choose</h3><p>The right tools for the job.</p></div>
+    <div><h3>Build and test</h3><p>Develop, test and tune the solution.</p></div>
+    <div><h3>Deliver</h3><p>Reliable, scalable results you can depend on.</p></div>
+  </div>
+</section>
+<section id="contact" class="rv"><div class="contact"><h2>Start your project.</h2><p class="lead">Tell me what you want to automate. I’ll reply with the simplest setup that gets it done.</p>
+  <div class="cf">
+    <label class="f">Your name<input type="text" id="fn" autocomplete="name"></label>
+    <label class="f">Work email<input type="email" id="em" autocomplete="email"></label>
+    <div class="full"><div class="f" style="color:var(--muted);font-size:.9rem;margin-bottom:.5rem">What do you need?</div><div class="needs">
+      <label><input type="radio" name="need" value="AI workflow automation" checked><span>AI workflows</span></label><label><input type="radio" name="need" value="CRM automation"><span>CRM automation</span></label><label><input type="radio" name="need" value="Python and data"><span>Python and data</span></label><label><input type="radio" name="need" value="Research"><span>Research</span></label><label><input type="radio" name="need" value="Not sure yet"><span>Not sure yet</span></label></div></div>
+    <label class="f full">What are you hoping to accomplish?<textarea id="msg" rows="4"></textarea></label>
+    <div class="full"><button class="btn" id="send" type="button">Send by email</button></div>
+  </div></div></section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><button id="pause2" class="pill" type="button">Pause motion</button><a class="pill" href="#top" style="text-decoration:none" id="top">Back to top</a></div></footer>
+<script>
+var R=document.documentElement;R.classList.add('js');
+document.getElementById('y').textContent=new Date().getFullYear();
+function paused(){return R.classList.contains('paused')}
+var hv=document.querySelector('.hero-vid'),pbs=[document.getElementById('pause'),document.getElementById('pause2')];
+function tp(){R.classList.toggle('paused');pbs.forEach(function(b){b.textContent=paused()?'Play motion':'Pause motion'});if(hv){paused()?hv.pause():hv.play()}}
+pbs.forEach(function(b){b.onclick=tp});
+if(matchMedia('(prefers-reduced-motion:reduce)').matches&&hv)hv.pause();
+document.getElementById('top').onclick=function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})};
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),st=document.getElementById('story'),sts=st.querySelectorAll('.st'),pns=st.querySelectorAll('.pn');
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40);
+ if(innerWidth>800){var r=st.getBoundingClientRect(),t=st.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,-r.top/t)),i=Math.min(3,Math.floor(p*4));st.style.setProperty('--p',p);sts.forEach(function(e,k){e.classList.toggle('on',k===i)});pns.forEach(function(e,k){e.classList.toggle('on',k<=i)})}else{pns.forEach(function(e){e.classList.add('on')})}}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+var m=document.querySelector('.marq div');m.innerHTML+=m.innerHTML;
+function count(el){var n=+el.dataset.n,t0=null;function f(t){t0=t0||t;var k=Math.min((t-t0)/1400,1),v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=(el.dataset.p||'')+(n>=1000?v.toLocaleString('en-US'):v)+(el.dataset.s||'');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+document.querySelectorAll('.ex-h').forEach(function(b){b.onclick=function(){var a=b.parentNode,o=a.classList.toggle('open');b.setAttribute('aria-expanded',o)}});
+var L=['Lead captured from the web form','Duplicate check passed','AI lead score: 82, hot lead','Slack alert sent to sales','Follow-up email queued','HubSpot contact updated','Invoice PDF generated','Payroll data sent for review'],fi=0,ul=document.getElementById('feed');
+function push(){if(paused())return;var li=document.createElement('li');li.textContent=L[fi++%L.length];ul.insertBefore(li,ul.firstChild);while(ul.children.length>5)ul.removeChild(ul.lastChild)}
+push();push();setInterval(push,1800);
+document.getElementById('send').onclick=function(){var v=function(i){return document.getElementById(i).value.trim()};var nd=(document.querySelector('input[name=need]:checked')||{}).value||'Not sure yet';var b='Name: '+v('fn')+'\nEmail: '+v('em')+'\nNeed: '+nd+'\n\n'+v('msg');location.href='mailto:your-email@example.com?subject='+encodeURIComponent('Project enquiry from '+v('fn'))+'&body='+encodeURIComponent(b)};
+var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img alt="">';document.body.appendChild(lb);
+document.querySelectorAll('[data-zoom]').forEach(function(b){b.onclick=function(){var i=b.querySelector('img');lb.firstChild.src=i.src;lb.firstChild.alt=i.alt;lb.classList.add('on')}});
+lb.onclick=function(){lb.classList.remove('on')};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+</script>
 </body>
 </html>

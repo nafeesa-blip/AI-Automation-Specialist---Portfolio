@@ -1,14 +1,19 @@
-# Nafeesa - AI Automation Specialist Portfolio
+# Nafeesa | AI Automation Portfolio
 
-This is a modern, high-converting, fully responsive portfolio website built with Tailwind CSS and modern JavaScript. It is specifically designed for Vercel deployment.
+A single-page 3D animated portfolio. No build step, no dependencies.
 
-## 🚀 How to Deploy on Vercel
+## Run locally
+Open `index.html` in any browser.
 
-1. Extract the contents of this ZIP file into a folder on your computer.
-2. Install Vercel CLI (`npm i -g vercel`) or go to [vercel.com](https://vercel.com).
-3. Import this project repository / folder into Vercel.
-4. Click **Deploy** (no build command needed as it is a pure static HTML/CSS/JS site).
+## Publish on GitHub Pages
+1. Create a new repository and upload `index.html`, the `images` folder and `README.md`.
+2. Go to Settings > Pages.
+3. Under Source, pick the `main` branch and the `/ (root)` folder, then Save.
+4. Your site appears at `https://<your-username>.github.io/<repo-name>/`.
 
-## 🧩 How to Add More Projects
+## Customize
+- Replace `your-email@example.com` in `index.html` with your real email.
+- Add GitHub, LinkedIn or Upwork links next to the Email button.
 
-Open `index.html` in any code editor (like VS Code), scroll down to the `#projects` section, and duplicate any existing `.project-card` div block to add your new projects instantly with category filtering support!
+## Hero video
+`images/hero-loop.mp4` is the looping background video in the first screen. Replace it with your own MP4 (keep the same name) to change it.
