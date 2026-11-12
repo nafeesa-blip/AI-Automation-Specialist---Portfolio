@@ -7,7 +7,7 @@
     <filter id="sh" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0f1b2d" flood-opacity=".08"/></filter>
   </defs>
   <rect width="1600" height="760" rx="28" fill="url(#bg)"/>
-  <text x="60" y="78" font-size="34" font-weight="800" fill="#0f1b2d">Project Mila · LLM data generation pipeline</text>
+  <text x="60" y="78" font-size="34" font-weight="800" fill="#0f1b2d">LLM data generation pipeline · reading comprehension dataset</text>
   <text x="60" y="114" font-size="19" fill="#5a6a7f">Raw English articles in, 1.5M validated multiple-choice reading comprehension Q&amp;A pairs out</text>
 
   <g stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#ar)">
