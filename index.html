@@ -39,6 +39,47 @@
         .glow-effect {
             box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.3);
         }
+        /* Full-width editorial theme inspired by Altufan Ulu's calm architectural layout. */
+        :root { color-scheme: light; --paper:#f5f3ee; --ink:#292823; --muted:#77756e; --line:#dfdcd3; --accent:#b96f43; }
+        html { scroll-padding-top: 5rem; }
+        body { background:var(--paper); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; }
+        nav { background:rgba(245,243,238,.94)!important; border-color:var(--line)!important; backdrop-filter:blur(16px); }
+        nav .text-slate-300, nav .text-slate-100 { color:#5f5c55!important; }
+        nav .text-brand-400, nav .hover\:text-brand-400:hover { color:var(--accent)!important; }
+        nav .bg-brand-600 { background:var(--accent)!important; border-radius:2px!important; box-shadow:none!important; }
+        nav .bg-brand-600:hover { background:#9d5d37!important; }
+        header { min-height:100svh; display:flex; align-items:center; padding-top:7rem!important; padding-bottom:4rem!important; background:linear-gradient(110deg,rgba(29,29,25,.83),rgba(29,29,25,.32)),url('images/hero-poster.webp') center/cover no-repeat; }
+        header > div:first-child { display:none; }
+        header .max-w-7xl { width:100%; max-width:1440px; }
+        header .max-w-3xl { max-width:850px; margin-left:0; text-align:left; }
+        header .glass-card { color:#f5f3ee!important; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.25)!important; backdrop-filter:blur(8px); }
+        header h1 { max-width:12ch; color:#fff; font-size:clamp(3rem,8vw,7rem); line-height:.99; letter-spacing:-.07em; }
+        header h1 .text-transparent { color:#e3a77f!important; background:none!important; -webkit-text-fill-color:initial!important; }
+        header p { max-width:42rem; color:rgba(255,255,255,.82)!important; }
+        header .bg-brand-600 { background:var(--paper)!important; color:var(--ink)!important; border-radius:2px!important; box-shadow:none!important; }
+        header .bg-brand-600:hover { background:var(--accent)!important; color:#fff!important; }
+        header .border-slate-700 { border-color:rgba(255,255,255,.5)!important; border-radius:2px!important; }
+        header .grid > div { border-radius:2px!important; border-color:rgba(255,255,255,.18)!important; }
+        section { padding-block:clamp(4.5rem,8vw,7.5rem)!important; }
+        section .max-w-7xl { max-width:1240px; }
+        section.bg-slate-900\/30, section.bg-slate-900\/20 { background:transparent!important; }
+        section.border-slate-900, footer.border-slate-900 { border-color:var(--line)!important; }
+        section h2 { color:var(--ink); letter-spacing:-.055em; }
+        section p { color:var(--muted); }
+        .glass-card { background:var(--surface,#fffefa)!important; border-color:var(--line)!important; border-radius:3px!important; box-shadow:none!important; }
+        section .text-slate-100, section .text-white, footer .text-white { color:var(--ink)!important; }
+        section .text-slate-300, section .text-slate-400 { color:var(--muted)!important; }
+        section .text-brand-400, section .text-brand-300, section .text-brand-200 { color:var(--accent)!important; }
+        section .bg-brand-950, section .bg-brand-900\/50 { background:#eee8df!important; }
+        section .border-brand-500 { border-color:var(--accent)!important; }
+        section .bg-brand-600 { background:var(--accent)!important; border-radius:2px!important; box-shadow:none!important; }
+        section .rounded-2xl, section .rounded-xl, section .rounded-lg { border-radius:3px!important; }
+        section .border-slate-800 { border-color:var(--line)!important; }
+        section .bg-slate-800, section .bg-slate-900 { background:#eeece6!important; }
+        section input, section textarea { background:#fffefa!important; color:var(--ink)!important; border-color:#cbc6bb!important; border-radius:2px!important; }
+        section input::placeholder, section textarea::placeholder { color:#89867e!important; }
+        footer { background:var(--paper)!important; color:var(--muted)!important; }
+        @media(max-width:767px) { header { align-items:flex-end; padding-bottom:3.5rem!important; } header .max-w-3xl { text-align:left; } header h1 { font-size:clamp(3rem,13vw,5rem); } }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
