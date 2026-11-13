@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Multi-agent RFP response assistant with RAG and multi-LLM routing | Nafeesa A. Portfolio</title>
+<meta name="description" content="Four AI agents read an RFP, search company documents, draft every answer with citations and fact-check each claim, using OpenAI, Claude and Gemini for what each does best, so the bid team reviews a complete draft in minutes instead of days.">
+<meta property="og:title" content="Multi-agent RFP response assistant with RAG and multi-LLM routing | Nafeesa A. Portfolio">
+<meta property="og:description" content="Four AI agents read an RFP, search company documents, draft every answer with citations and fact-check each claim, using OpenAI, Claude and Gemini for what each does best, so the bid team reviews a complete draft in minutes instead of days.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>AI agents · RAG</span></div>
+  <span class="kicker">Case study</span>
+  <h1>Multi-agent RFP response assistant with RAG and multi-LLM routing</h1>
+  <span class="role">AI Engineer | RAG, LLM Integration &amp; AI Agents</span>
+  <p class="sub">Four AI agents read an RFP, search company documents, draft every answer with citations and fact-check each claim, using OpenAI, Claude and Gemini for what each does best, so the bid team reviews a complete draft in minutes instead of days.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Multi-agent RFP response assistant with RAG and multi-LLM routing">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>Multi-agent RAG application</b></div><div class="fact"><span>Stack</span><b>Python, LlamaIndex, LangGraph, FastAPI</b></div><div class="fact"><span>LLMs</span><b>OpenAI GPT-4.1, Claude Sonnet, Gemini 2.5 Pro</b></div><div class="fact"><span>Data</span><b>Demonstration with sample data</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/rfp-agents-architecture.png" target="_blank" rel="noopener"><img src="../images/rfp-agents-architecture.png" alt="Architecture: company documents parsed with Gemini and indexed with LlamaIndex in Supabase pgvector, a LangGraph multi-agent workflow with planner, research, writer and reviewer agents, a model router across OpenAI, Claude and Gemini, and human review, n8n export, Langfuse tracing and deployment" loading="eager"><span class="cap">Architecture: knowledge base, the four-agent workflow with the model router, and human review and operations.</span></a><a class="figure" href="../images/rfp-agents-workspace.png" target="_blank" rel="noopener"><img src="../images/rfp-agents-workspace.png" alt="RFP review workspace with the list of extracted questions, a drafted answer with numbered citations, a reviewer agent note, the sources used and the agent steps" loading="lazy"><span class="cap">Review workspace: each answer with citations, sources, confidence and the reviewer agent note.</span></a><a class="figure" href="../images/rfp-agents-trace.png" target="_blank" rel="noopener"><img src="../images/rfp-agents-trace.png" alt="Agent trace for one question showing each step on a timeline with the model used, tokens and cost, plus run totals and provider failovers" loading="lazy"><span class="cap">Langfuse trace of one question: which model did each step, how long it took and what it cost.</span></a><a class="figure" href="../images/rfp-agents-evaluation.png" target="_blank" rel="noopener"><img src="../images/rfp-agents-evaluation.png" alt="Evaluation results comparing Claude Sonnet, GPT-4.1, Gemini 2.5 Pro and GPT-4.1 mini as writer models, and retrieval hit rate improving from 74% to 94%" loading="lazy"><span class="cap">Evaluation: how the writer model was chosen and how retrieval quality was improved.</span></a><a class="figure" href="../images/rfp-agents-code.png" target="_blank" rel="noopener"><img src="../images/rfp-agents-code.png" alt="Python code excerpt: the multi-provider model router with failover, the LlamaIndex hybrid retriever on Supabase, and the LangGraph agent graph" loading="lazy"><span class="cap">Code excerpt: model router, hybrid retriever and the LangGraph agent graph.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>An IT services company answers several RFPs (requests for proposal) every month. Each one has 40 to 100 questions about security, experience, team, pricing and process. The answers already exist somewhere in old proposals, policies, certificates and CVs, but finding them, rewriting them for the new client and checking that every claim is still true took the bid team about two days per RFP. Copying from old proposals also caused mistakes, like outdated certificate dates.</p>
+      <h2>The solution</h2>
+      <p>I built a multi-agent RAG system that produces a complete, cited first draft in about 12 minutes. Four specialised agents work together in LangGraph, each question is answered in parallel, and every answer links to the exact documents it came from. A model router sends each task to the model that does it best: OpenAI for structured extraction and fact-checking, Claude for long-form writing, and Gemini for parsing very long PDFs. People stay in control: the team reviews, edits and approves every answer before anything is exported.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>Build the knowledge base</b>n8n watches a Google Drive folder. New or changed documents are parsed (Gemini handles long PDFs, tables and scans), split into section-aware chunks with metadata like client, year and document type, embedded and stored in Supabase with pgvector.</li><li><b>Planner agent</b>Reads the new RFP and returns every question, requirement, word limit and deadline as structured JSON.</li><li><b>Research agent</b>For each question, rewrites the query, runs hybrid search (vector and keyword) with metadata filters, and re-ranks the results to keep the six best sources.</li><li><b>Writer agent</b>Drafts the answer in the company's voice, within the word limit, citing each source it uses.</li><li><b>Reviewer agent</b>Checks every claim against its sources, plus word limits and banned terms. Weak answers go back to the writer once with feedback; anything still uncertain is flagged for a person.</li><li><b>Human review</b>The bid team works in a Next.js app with Supabase login: they see each answer, its sources and confidence, then approve, edit, regenerate or assign it to a colleague.</li><li><b>Export and learn</b>n8n exports approved answers into the company's Word template and notifies the bid owner in Slack. Approved answers are saved back to the knowledge base, so the next RFP starts from better material.</li></ol>
+      <h2>LLM integration</h2>
+      <ul class="ticks"><li>One Python interface for OpenAI, Anthropic Claude and Google Gemini</li><li>Task-based routing: each model does the job it scored best on in evaluation</li><li>Automatic retries and failover to a second provider on errors or rate limits</li><li>Structured JSON outputs with schema validation for extraction steps</li><li>Every call traced in Langfuse with model, tokens, cost and latency</li></ul>
+      <h2>RAG pipeline</h2>
+      <ul class="ticks"><li>LlamaIndex ingestion with section-aware chunking and rich metadata</li><li>Supabase Postgres with pgvector, with row-level security so teams only search their own documents</li><li>Hybrid retrieval (vector plus BM25 keyword) fused with reciprocal rank fusion</li><li>Re-ranking to the six best sources per question</li><li>Numbered citations in every answer, linked to the source document</li></ul>
+      <h2>Evaluation and production</h2>
+      <ul class="ticks"><li>An 80-question evaluation set graded with Ragas and by people, run in GitHub Actions before each release</li><li>Writer model chosen by testing: Claude Sonnet scored 4.6 out of 5, ahead of GPT-4.1 and Gemini 2.5 Pro</li><li>Retrieval hit rate improved from 74% with vector search alone to 94% with hybrid search, filters and re-ranking</li><li>FastAPI backend in Docker, Supabase for data and auth, n8n for integrations</li><li>Cost and latency dashboards to keep each RFP under $5 in API cost</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>A 46-question RFP drafted in about 12 minutes instead of about two days</li><li>61% of answers approved without edits, 30% with light edits</li><li>Every answer has a source, or is clearly flagged for a person</li><li>No failed runs across 40 test RFPs, thanks to retries and provider failover</li></ul>
+      <p class="note">Demonstration build with sample data.</p>
+      <div class="pager"><a href="shopify-rag-support-chatbot.html"><span>← Previous project</span><b>AI customer support chatbot with RAG for a Shopify store</b></a><a class="next" href="ai-lead-intelligence-crm-automation.html"><span>Next project →</span><b>AI-powered lead intelligence &amp; CRM automation</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>LlamaIndex</span><span>LangGraph</span><span>OpenAI API</span><span>Anthropic Claude</span><span>Google Gemini</span><span>Supabase</span><span>pgvector</span><span>Cohere Rerank</span><span>FastAPI</span><span>Next.js</span><span>n8n</span><span>Langfuse</span><span>Ragas</span><span>Docker</span></div></div>
+      <div class="side-card dark"><h3>Need something similar?</h3><p>Tell me what you want to automate and I’ll reply with the simplest setup that gets it done.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Multi-agent RFP response assistant with RAG and multi-LLM routing">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="shopify-rag-support-chatbot.html"><img src="../images/rag-chatbot-architecture.png" alt="" loading="lazy"><div><span>AI chatbot · RAG</span><b>AI customer support chatbot with RAG for a Shopify store</b><p>A LangGraph chatbot that answers from the store's knowledge base and live Shopify data, with human handoff.</p></div></a><a class="more-card" href="reading-comprehension-dataset-generation.html"><img src="../images/rc-dataset-pipeline.svg" alt="" loading="lazy"><div><span>LLM · Synthetic data</span><b>Large-scale reading comprehension dataset generation (1.5M Q&amp;A)</b><p>An LLM pipeline on vLLM that generated 1.5 million multiple-choice reading comprehension Q&amp;A pairs, with validation, JSON repair and retries.</p></div></a><a class="more-card" href="ai-marketing-automation-system.html"><img src="../images/marketing-automation-architecture.png" alt="" loading="lazy"><div><span>Marketing automation · n8n</span><b>AI marketing automation system for a tour operator</b><p>Supplier promotions turned into bilingual campaigns with branded visuals, human approval, Mailchimp and weekly reports.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
+</script>
+</body>
+</html>
