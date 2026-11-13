@@ -28,6 +28,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Data annotation (AI training data) | `data-annotation.html` |
 | Reading comprehension dataset (1.5M Q&A) | `projects/reading-comprehension-dataset-generation.html` |
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
+| Shopify RAG support chatbot | `projects/shopify-rag-support-chatbot.html` |
 | AI lead intelligence & CRM automation | `projects/ai-lead-intelligence-crm-automation.html` |
 | AI recruiter outreach agent | `projects/ai-recruiter-outreach-agent.html` |
 | Business research & strategic analysis | `projects/business-research-strategic-analysis.html` |

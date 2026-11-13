@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI customer support chatbot with RAG for a Shopify store | Nafeesa A. Portfolio</title>
+<meta name="description" content="A Python support chatbot that answers order, shipping, return and product questions from the store&#39;s own knowledge base and live Shopify data, shows its sources, and hands the conversation to a person when it is not confident.">
+<meta property="og:title" content="AI customer support chatbot with RAG for a Shopify store | Nafeesa A. Portfolio">
+<meta property="og:description" content="A Python support chatbot that answers order, shipping, return and product questions from the store&#39;s own knowledge base and live Shopify data, shows its sources, and hands the conversation to a person when it is not confident.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>AI chatbot · RAG</span></div>
+  <span class="kicker">Case study</span>
+  <h1>AI customer support chatbot with RAG for a Shopify store</h1>
+  <span class="role">AI Engineer | RAG &amp; LLM Application Developer</span>
+  <p class="sub">A Python support chatbot that answers order, shipping, return and product questions from the store's own knowledge base and live Shopify data, shows its sources, and hands the conversation to a person when it is not confident.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: AI customer support chatbot with RAG for a Shopify store">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>AI customer support chatbot</b></div><div class="fact"><span>Stack</span><b>Python, FastAPI, LangGraph</b></div><div class="fact"><span>Integrations</span><b>OpenAI, Qdrant, Shopify Admin &amp; Storefront API, helpdesk</b></div><div class="fact"><span>Data</span><b>Demonstration with sample data</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/rag-chatbot-architecture.png" target="_blank" rel="noopener"><img src="../images/rag-chatbot-architecture.png" alt="RAG chatbot architecture: knowledge ingestion into Qdrant, a LangGraph agent that routes questions to Shopify order tools, product tools or knowledge search, grounded answers, and a confidence check with human handoff" loading="eager"><span class="cap">Architecture: knowledge ingestion, the LangGraph answering flow and the guardrails.</span></a><a class="figure" href="../images/rag-chatbot-conversations.png" target="_blank" rel="noopener"><img src="../images/rag-chatbot-conversations.png" alt="Three chat widget conversations: order tracking after email verification, a return policy and product answer with sources, and a low-confidence handoff to support" loading="lazy"><span class="cap">Three sample conversations: order tracking, a sourced policy and product answer, and a human handoff.</span></a><a class="figure" href="../images/rag-chatbot-knowledge-base.png" target="_blank" rel="noopener"><img src="../images/rag-chatbot-knowledge-base.png" alt="Knowledge base admin panel with document upload, indexed documents, Shopify product sync, unanswered questions and a test preview" loading="lazy"><span class="cap">Admin panel where the team updates the knowledge base without a developer.</span></a><a class="figure" href="../images/rag-chatbot-code.png" target="_blank" rel="noopener"><img src="../images/rag-chatbot-code.png" alt="Python code excerpt: the LangGraph graph with routing and confidence check, the FastAPI chat endpoint and the verified Shopify order lookup" loading="lazy"><span class="cap">Code excerpt: LangGraph routing, the FastAPI endpoint and the verified order lookup.</span></a><a class="figure" href="../images/rag-chatbot-analytics.png" target="_blank" rel="noopener"><img src="../images/rag-chatbot-analytics.png" alt="Testing and analytics dashboard: resolution rate, handoff rate, test set results, questions by topic and RAG quality metrics" loading="lazy"><span class="cap">Testing and analytics: test set results, RAG quality metrics and questions by topic.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>A Shopify store gets the same customer questions every day: where is my order, how long does shipping take, can I return this, does this product fit my needs. The support team spends most of its time on these instead of the cases that really need a person. A basic chatbot is not enough: it has to give correct answers from the store's own policies, look up real order and product data, sound human, and know when to stop and hand over.</p>
+      <h2>The solution</h2>
+      <p>I designed a retrieval-augmented (RAG) support chatbot in Python. A LangGraph agent behind a FastAPI endpoint decides what each question needs: a Shopify order lookup, live product data, a search of the knowledge base, or a human. Answers are written only from what was retrieved, with the source shown to the customer. When the bot is not confident, it says so and creates a ticket for the team with the full conversation, instead of guessing.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>Knowledge ingestion</b>FAQs, policies and help docs (PDF, DOCX, Markdown, Google Docs) are cleaned, split by heading into chunks with their source and date, embedded with OpenAI and stored in Qdrant. Shopify products are synced every night.</li><li><b>Customer asks</b>A chat widget on the Shopify store sends the message and a session ID to the FastAPI /chat endpoint. Conversation memory is kept per session.</li><li><b>Route the question</b>A small, fast model classifies the intent: order status, product, policy, or sensitive (refunds, payments, cancellations).</li><li><b>Use the right tool</b>Order questions call the Shopify Admin API, but only after the order number and checkout email match. Product questions read live price, stock and variants from the Storefront API. Policy questions run a hybrid (vector and keyword) search with re-ranking.</li><li><b>Write a grounded answer</b>The answer uses only the retrieved facts, in the store's tone, with a source link or product card.</li><li><b>Confidence check and fallback</b>If the retrieval score is low, there is no source, or the topic is sensitive, the customer is told a person will reply, and a helpdesk ticket is created with the transcript and a suggested reply.</li><li><b>Learn from gaps</b>Every conversation is logged. Unanswered questions are listed in the admin panel so the team can turn them into new FAQ entries.</li></ol>
+      <h2>Key features</h2>
+      <ul class="ticks"><li>Answers from the store's own FAQs, policies and product data</li><li>Real order status and tracking from Shopify, with email verification</li><li>Live product price and stock, never outdated</li><li>Source shown with every policy answer</li><li>Confidence-based handoff to a person with full context</li><li>Refunds, payments and angry customers always go to a person</li><li>Simple admin panel: upload a file, edit an FAQ, archive an old policy</li><li>Only changed documents are re-indexed, so updates take about a minute</li></ul>
+      <h2>Testing and reliability</h2>
+      <ul class="ticks"><li>A test set of 120 real customer questions with expected answers, run with Pytest and Ragas on every change</li><li>Checks for answer correctness, faithfulness to sources, retrieval recall and correct handoff</li><li>A security test that no order data is ever shown without an email match</li><li>Docker deployment with logging, error alerts and rate limiting</li><li>Documentation for the team (how to update knowledge) and for developers (setup and architecture)</li></ul>
+      <h2>Delivery plan</h2>
+      <ul class="ticks"><li>Week 1: knowledge base ingestion, Qdrant setup and the first test set</li><li>Week 2: LangGraph agent, Shopify order and product tools, grounded answers</li><li>Week 3: chat widget, fallback and helpdesk handoff, admin panel</li><li>Week 4: testing against the question set, tuning, deployment and documentation</li></ul>
+      <h2>Running cost</h2>
+      <p>OpenAI usage is roughly half a cent to one cent per conversation with GPT-4o-mini for routing and GPT-4o for answers. Hosting (a small server for FastAPI and PostgreSQL) and Qdrant Cloud's starter tier are usually around $20 to $60 per month for a store of this size.</p>
+      <h2>Results</h2>
+      <ul class="ticks"><li>About two-thirds of conversations resolved without a person in testing with sample data</li><li>Order status questions answered instantly, any time of day</li><li>The team only sees the cases that need judgment, with the conversation already summarized</li><li>Answers stay correct when policies change, because the team updates the knowledge base directly</li></ul>
+      <p class="note">Demonstration build with sample data.</p>
+      <div class="pager"><a href="ai-marketing-automation-system.html"><span>← Previous project</span><b>AI marketing automation system for a tour operator</b></a><a class="next" href="ai-lead-intelligence-crm-automation.html"><span>Next project →</span><b>AI-powered lead intelligence &amp; CRM automation</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span><span>OpenAI API</span><span>Qdrant</span><span>Shopify API</span><span>PostgreSQL</span><span>Ragas</span><span>Pytest</span><span>Docker</span></div></div>
+      <div class="side-card dark"><h3>Need something similar?</h3><p>Tell me what you want to automate and I’ll reply with the simplest setup that gets it done.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: AI customer support chatbot with RAG for a Shopify store">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="ai-marketing-automation-system.html"><img src="../images/marketing-automation-architecture.png" alt="" loading="lazy"><div><span>Marketing automation · n8n</span><b>AI marketing automation system for a tour operator</b><p>Supplier promotions turned into bilingual campaigns with branded visuals, human approval, Mailchimp and weekly reports.</p></div></a><a class="more-card" href="reading-comprehension-dataset-generation.html"><img src="../images/rc-dataset-pipeline.svg" alt="" loading="lazy"><div><span>LLM · Synthetic data</span><b>Large-scale reading comprehension dataset generation (1.5M Q&amp;A)</b><p>An LLM pipeline on vLLM that generated 1.5 million multiple-choice reading comprehension Q&amp;A pairs, with validation, JSON repair and retries.</p></div></a><a class="more-card" href="ai-recruiter-outreach-agent.html"><img src="../images/recruiter-outreach-agent.gif" alt="" loading="lazy"><div><span>AI agent · n8n</span><b>AI recruiter outreach agent</b><p>An n8n agent that writes personalized recruiter emails, gets human approval in Slack and handles follow-ups.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
+</script>
+</body>
+</html>
