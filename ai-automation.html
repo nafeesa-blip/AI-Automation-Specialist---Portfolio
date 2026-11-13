@@ -26,7 +26,7 @@
     <div class="fact"><span>Workflow tools</span><b>n8n, Make, Zapier, Apps Script</b></div>
     <div class="fact"><span>AI models</span><b>OpenAI, Claude, Gemini</b></div>
     <div class="fact"><span>Integrations</span><b>HubSpot, Salesforce, Slack, Gmail, Sheets, REST APIs</b></div>
-    <div class="fact"><span>Case studies</span><b>9 projects below</b></div>
+    <div class="fact"><span>Case studies</span><b>10 projects below</b></div>
   </div>
 </header>
 <main>
@@ -34,6 +34,22 @@
   <span class="kicker">Case studies</span><h2>Selected projects</h2><p class="lead">Real workflows, clear thinking, useful outcomes. Click any project to see the full details.</p>
   <article class="proj"><div class="shot"><div class="stack"><button type="button" aria-label="Open the pipeline diagram" data-zoom><img src="images/rc-dataset-pipeline.svg" alt="Pipeline diagram: raw articles, prompt design, vLLM inference with gpt-oss-20b, JSON repair, validation with a retry queue, cleaning and enrichment, and 1.5 million Q&amp;A pairs exported as JSON and CSV" loading="lazy"></button><button type="button" aria-label="Open the dataset sample" data-zoom><img src="images/rc-dataset-sample.png" alt="Spreadsheet sample of the generated dataset with ID, source text, language, source URL, type, processing date, question, options, answer and analysis columns" loading="lazy"></button></div><small>Pipeline overview and a sample of the generated dataset.</small></div><div><h3>Large-scale reading comprehension dataset generation (1.5M Q&amp;A)</h3><div class="role">AI Engineer | LLM Data Pipeline Developer</div><p>A high-throughput synthetic data pipeline that turns raw English articles into structured reading comprehension questions. Each article produces 7 multiple-choice questions across four skill categories, for a final dataset of 1.5 million Q&amp;A pairs ready for LLM training and evaluation. The pipeline repairs malformed JSON, validates every question, retries failures automatically and tags each record with rich metadata.</p><h4>Built with</h4><div class="chips"><span>Python</span><span>vLLM</span><span>gpt-oss-20b</span><span>PyTorch (CUDA)</span><span>Pandas</span><span>Prompt engineering</span></div><a class="project-open" href="projects/reading-comprehension-dataset-generation.html">View project</a></div></article>
   <article class="proj rev">
+    <div class="shot">
+      <div class="stack">
+        <button type="button" aria-label="Open the marketing automation system diagram" data-zoom><img src="images/marketing-automation-architecture.png" alt="Four-stage marketing system: supplier promotion intake, English and Spanish content with branded visuals, a human approval gate, then scheduling, Mailchimp and weekly reporting" loading="lazy"></button>
+        <button type="button" aria-label="Open the approval dashboard" data-zoom><img src="images/marketing-approval-dashboard.png" alt="Approval dashboard with English and Spanish posts side by side, automatic checks and approve, request changes and reject buttons" loading="lazy"></button>
+      </div>
+      <small>System diagram and approval dashboard. Open the project for the calendar, visuals and report.</small>
+    </div>
+    <div>
+      <h3>AI marketing automation system for a tour operator</h3>
+      <div class="role">AI Marketing Automation Developer | n8n &amp; API Integration</div>
+      <p>A turnkey system that turns supplier promotions into bilingual campaigns. n8n reads supplier emails and PDFs, AI extracts the offer and writes English and Spanish posts, and branded images and 15-second videos are generated from templates. Every item goes to an approval dashboard with automatic price, deadline and link checks. Nothing is published until a team member approves it. Approved posts are scheduled, emails go out through Mailchimp and results flow into a weekly report.</p>
+      <h4>Built with</h4>
+      <div class="chips"><span>n8n</span><span>OpenAI API</span><span>Airtable</span><span>Mailchimp</span><span>Social Media Automation</span></div><a class="project-open" href="projects/ai-marketing-automation-system.html">View project</a>
+    </div>
+  </article>
+  <article class="proj">
     <div class="shot">
       <button type="button" aria-label="Open the AI lead research and CRM enrichment workflow image in high resolution" data-zoom><img src="images/ai-lead-research-crm-enrichment.png" alt="AI lead research and CRM enrichment n8n workflow: daily schedule, AI search query generation, Apollo company search, Hunter email verification, AI enrichment and qualification, duplicate checks, data cleaning, HubSpot, Google Sheets, personalized Gmail outreach and nurture routing" loading="lazy" decoding="async" fetchpriority="high"></button>
       <small>Click the diagram to view it in high resolution.</small>
@@ -46,7 +62,7 @@
       <div class="chips"><span>n8n</span><span>AI Automation</span><span>API Integration</span><span>HubSpot</span><span>Lead Generation</span></div><a class="project-open" href="projects/ai-lead-intelligence-crm-automation.html">View project</a>
     </div>
   </article>
-  <article class="proj">
+  <article class="proj rev">
     <div class="shot">
       <button type="button" aria-label="Open the recruiter outreach agent graphic full size" data-zoom><img src="images/recruiter-outreach-agent.gif" alt="Animated diagram of the recruiter outreach loop around an n8n hub: contacts, personalize, approve in Slack, send with Gmail, track replies, report" loading="lazy"></button>
       <small>Click the animation to view it full size.</small>
@@ -69,7 +85,7 @@
       <div class="chips"><span>n8n</span><span>AI Agent Development</span><span>OpenAI API</span><span>Email Automation</span><span>API Integration</span></div><a class="project-open" href="projects/ai-recruiter-outreach-agent.html">View project</a>
     </div>
   </article>
-  <article class="proj rev">
+  <article class="proj">
     <div class="shot">
       <div class="stack">
         <button type="button" aria-label="Open the executive dashboard page full size" data-zoom><img src="images/research-dashboard.png" alt="Executive summary dashboard tab with KPI scores, financial snapshot, distribution, technology, competitive and risk summaries" loading="lazy"></button>
@@ -85,7 +101,7 @@
       <div class="chips"><span>Market Research</span><span>Business Analysis</span><span>Competitive Analysis</span><span>Strategic Planning</span><span>Financial Analysis</span></div><a class="project-open" href="projects/business-research-strategic-analysis.html">View project</a>
     </div>
   </article>
-  <article class="proj">
+  <article class="proj rev">
     <div class="shot">
       <div class="stack">
         <button type="button" aria-label="Open the spot the difference image pairs full size" data-zoom><img src="images/spot-difference-pairs.png" alt="Two generated spot the difference image pairs, a kids' treehouse scene and a forest treehouse scene, with the differences circled in red" loading="lazy"></button>
@@ -101,7 +117,7 @@
       <div class="chips"><span>Python</span><span>Artificial Intelligence</span><span>Generative AI</span><span>Data Processing</span><span>Prompt Engineering</span></div><a class="project-open" href="projects/ai-spot-the-difference-dataset.html">View project</a>
     </div>
   </article>
-  <article class="proj rev">
+  <article class="proj">
     <div class="shot">
       <button type="button" aria-label="Open the invoice generator workflow diagram full size" data-zoom><img src="images/invoice-generator-workflow.png" alt="Four-step workflow: enter invoice details, run a Python script, generate a PDF, then save or print the invoice" loading="lazy"></button>
       <small>Planned workflow of the application. Click the diagram to view it full size.</small>
@@ -114,7 +130,7 @@
       <div class="chips"><span>Python</span><span>PDF</span><span>Data Extraction</span><span>File Management</span></div><a class="project-open" href="projects/windows-invoice-generator.html">View project</a>
     </div>
   </article>
-  <article class="proj">
+  <article class="proj rev">
     <div class="shot">
       <button type="button" aria-label="Open the payroll automation screenshot full size" data-zoom><img src="images/payroll-automation.png" alt="Google Sheets payroll sheet with a Payroll Automation menu, the Apps Script code editor, and a Send Payroll Data to freee HR dialog showing processing steps and a success status" loading="lazy"></button>
       <small>Google Sheets menu, Apps Script code and the send dialog. Click the image to view it full size.</small>
@@ -136,7 +152,7 @@
       <div class="chips"><span>Google Apps Script</span><span>REST API</span><span>Google Sheets</span><span>API Integration</span></div><a class="project-open" href="projects/payroll-automation-freee-hr.html">View project</a>
     </div>
   </article>
-  <article class="proj rev">
+  <article class="proj">
     <div class="shot">
       <button type="button" aria-label="Open the CRM automation workflow diagram full size" data-zoom><img src="images/crm-lead-scoring-workflow.png" alt="n8n workflow in two parts: lead capture, HubSpot sync and AI scoring with hot lead alerts, then an automated follow-up email sequence that stops when the lead replies" loading="lazy"></button>
       <small>The n8n workflow. Click the diagram to view it full size.</small>
@@ -149,7 +165,7 @@
       <div class="chips"><span>n8n</span><span>CRM Automation</span><span>OpenAI API</span><span>Lead Generation</span></div><a class="project-open" href="projects/crm-lead-scoring-follow-up.html">View project</a>
     </div>
   </article>
-  <article class="proj">
+  <article class="proj rev">
     <div class="shot">
       <button type="button" aria-label="Open the webinar lead automation diagram full size" data-zoom><img src="images/webinar-lead-automation.png" alt="Two n8n workflows: lead capture and round-robin advisor assignment with duplicate review, and an hourly reminder scheduler that sends 24 hour and 1 hour reminders" loading="lazy"></button>
       <small>The two n8n workflows. Click the diagram to view it full size.</small>
@@ -175,7 +191,7 @@ document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(
 document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
 </script>
 <script>
-var PG=["projects/reading-comprehension-dataset-generation.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
+var PG=["projects/reading-comprehension-dataset-generation.html", "projects/ai-marketing-automation-system.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
 document.querySelectorAll('#projects .proj').forEach(function(c,i){c.addEventListener('click',function(e){if(e.target.closest('a'))return;location.href=PG[i]})});
 </script>
 </body>
