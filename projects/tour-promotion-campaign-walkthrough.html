@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Supplier promotion to bilingual campaign: step-by-step build | Nafeesa A. Portfolio</title>
+<meta name="description" content="A step-by-step build on a real (sanitized) supplier promotion: the n8n workflows, what the AI extracts from the document, the safeguards that block wrong prices and dates, the English and Spanish copy, branded graphics, a carousel, a vertical video, the Mailchimp email, human approval and the learning loop.">
+<meta property="og:title" content="Supplier promotion to bilingual campaign: step-by-step build | Nafeesa A. Portfolio">
+<meta property="og:description" content="A step-by-step build on a real (sanitized) supplier promotion: the n8n workflows, what the AI extracts from the document, the safeguards that block wrong prices and dates, the English and Spanish copy, branded graphics, a carousel, a vertical video, the Mailchimp email, human approval and the learning loop.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.stepno{display:inline-block;margin-bottom:.4rem;padding:.2rem .65rem;border-radius:99px;background:var(--soft);color:var(--accent-d);font:700 .75rem Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.walk h2{font-size:clamp(1.45rem,2.4vw,1.9rem);margin:0 0 .8rem}
+.walk>section>p,.walk .lead-p{color:#334155;max-width:76ch}
+.walk .figure{margin:1.2rem 0}
+.split2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.4rem;align-items:start;margin-top:1.2rem}
+.split2.narrow{grid-template-columns:minmax(0,360px) minmax(0,1fr)}
+.cs-table td,.cs-table th{padding:.65rem .9rem;border-top:1px solid var(--line);font-size:.9rem;vertical-align:top}
+.cs-table tr.off td{color:#94a3b8;text-decoration:line-through}
+.cs-table tr.off td:last-child{text-decoration:none}
+b.yes{color:#15803d}b.no{color:#b91c1c}
+.flags{list-style:none;margin:1rem 0;padding:0;display:grid;gap:.5rem}
+.fl{display:grid;grid-template-columns:5.2rem 1fr;gap:.8rem;align-items:start;padding:.7rem .9rem;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:.9rem;color:#334155}
+.fl>span{font:700 .72rem Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:6px;text-align:center}
+.fl code{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.1rem}
+.fl.block>span{background:#fee2e2;color:#b91c1c}.fl.warn>span{background:#fef3c7;color:#92400e}.fl.info>span{background:#e0ecff;color:#1d4ed8}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1rem;margin-top:1rem}
+.post{padding:1rem 1.1rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-size:.9rem;color:#334155}
+.post header{display:flex;justify-content:space-between;margin-bottom:.5rem}
+.post header span{font:700 .72rem Inter,sans-serif;color:var(--accent-d);background:var(--soft);padding:.15rem .5rem;border-radius:6px}
+.post p{margin:0 0 .6rem}.post small{color:var(--accent-d)}
+.tabs{display:flex;gap:.5rem;margin-top:1rem}
+.tabs button{font:600 .85rem Inter,sans-serif;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+[data-pane][hidden]{display:none}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);gap:.8rem;overflow-x:auto;padding:.3rem 0 .8rem;scroll-snap-type:x mandatory}
+.strip a{scroll-snap-align:start}.strip img{display:block;width:100%;border-radius:12px;border:1px solid var(--line)}
+.video-wrap{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:1.6rem;align-items:start;margin-top:1.2rem}
+.video-wrap video{width:100%;border-radius:18px;background:#000;box-shadow:var(--shadow)}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1rem;margin-top:1rem}
+.status div{padding:1rem 1.1rem;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.status h3{font-size:1rem;margin-bottom:.4rem}.status ul{margin:0;padding-left:1.1rem;color:#334155;font-size:.9rem}
+.status .s1{border-top:4px solid #16a34a}.status .s2{border-top:4px solid var(--accent)}.status .s3{border-top:4px solid #d97706}
+.walk>section{padding-top:clamp(2.5rem,5vw,3.5rem);padding-bottom:clamp(2.5rem,5vw,3.5rem);border-bottom:1px solid var(--line)}
+.walk>section:nth-child(even){background:#fff}
+@media(max-width:800px){.split2,.split2.narrow,.video-wrap{grid-template-columns:1fr}.video-wrap video{max-width:320px}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><a href="ai-marketing-automation-system.html">Marketing automation</a><span>/</span><span>Step-by-step build</span></div>
+  <span class="kicker">Build walkthrough</span>
+  <h1>From one supplier promotion to a bilingual campaign, step by step</h1>
+  <span class="role">n8n · OpenAI · Airtable · Mailchimp · Creatomate</span>
+  <p class="sub">A tour operator sent a sanitized supplier promotion (a Spanish Word document) and asked to see the full process. This page follows that one document through the system: what the AI extracts, which safeguards run, the English and Spanish copy, the graphics, carousel and video, the Mailchimp email, the approval step and the learning loop.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: supplier promotion to campaign automation">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Input</span><b>1 supplier promotion (.docx)</b></div><div class="fact"><span>Output</span><b>6 posts, 2 carousels, 2 graphics, 1 video, 2 emails</b></div><div class="fact"><span>Languages</span><b>English and Spanish</b></div><div class="fact"><span>Rule</span><b>Nothing is published without approval</b></div></div>
+</header>
+<main class="walk">
+
+<section>
+  <span class="stepno">The system</span>
+  <h2>Three n8n workflows</h2>
+  <p>These are screenshots of the real workflows running in n8n. Workflow 1 turns a supplier document into a draft campaign. Workflow 2 runs every minute and only lets approved content through. Workflow 3 runs weekly and feeds what worked back into the next campaign.</p>
+  <a class="figure" href="../images/tour-promo-n8n-intake.png" target="_blank" rel="noopener"><img src="../images/tour-promo-n8n-intake.png" alt="n8n workflow: form or email intake, PDF check, read document, AI extraction, safeguards, save to Airtable, blocked check, then AI content, rendering, Mailchimp drafts and the approval dashboard" loading="lazy"><span class="cap">Workflow 1: supplier promotion → draft campaign. If a safeguard blocks the promotion, the run stops at “Needs a person” and nothing is generated.</span></a>
+  <div class="split2">
+    <a class="figure" href="../images/tour-promo-n8n-approval.png" target="_blank" rel="noopener"><img src="../images/tour-promo-n8n-approval.png" alt="n8n approval guard workflow running every minute" loading="lazy"><span class="cap">Workflow 2: approval guard. Expires old offers, sends edited content back to review, has the AI revise on request, and schedules only approved content.</span></a>
+    <a class="figure" href="../images/tour-promo-n8n-insights.png" target="_blank" rel="noopener"><img src="../images/tour-promo-n8n-insights.png" alt="n8n learning loop workflow running every Monday" loading="lazy"><span class="cap">Workflow 3: learning loop. Pulls results every Monday and saves insights that the next campaign’s AI writer uses.</span></a>
+  </div>
+  <div class="cs-table"><table><thead><tr><th>Workflow 1 node</th><th>What it does</th></tr></thead><tbody>
+    <tr><td>Supplier promotion (form upload)</td><td>Staff upload the supplier’s Word, PDF or text file, with the email it came in.</td></tr>
+    <tr><td>Supplier email inbox (IMAP)</td><td>The same intake straight from the promotions inbox. Built, switched on once the client’s inbox is connected.</td></tr>
+    <tr><td>Is it a PDF? → Extract PDF text / Read document</td><td>Turns any format into plain text and keeps the original file for the reviewer.</td></tr>
+    <tr><td>AI · Extract promotion (OpenAI)</td><td>Fills a strict JSON schema: departures, prices, supplements, availability, discount rules, booking window, restrictions, and the agency-only data in a separate block.</td></tr>
+    <tr><td>Safeguards</td><td>Plain code, not AI. Checks every price and date against the document, recalculates the discount, separates promotional departures and detects expiry and confidential data.</td></tr>
+    <tr><td>Airtable · Save promotion + detect supplier correction</td><td>Saves the promotion. If the same tour already exists, it becomes version 2: the changes are listed and the old content is held.</td></tr>
+    <tr><td>Blocked?</td><td>Any blocking problem stops the run here for a person to fix.</td></tr>
+    <tr><td>AI · Write EN/ES content</td><td>Writes the posts, carousel, video script, email and calendar in both languages, using last month’s insights.</td></tr>
+    <tr><td>Render · Graphics, carousels, video</td><td>Fills branded templates (Creatomate or Placid) with the copy and the destination photos.</td></tr>
+    <tr><td>Mailchimp · Create EN/ES draft campaigns</td><td>Creates both campaigns as drafts. Nothing is sent.</td></tr>
+    <tr><td>Airtable · Send to approval dashboard</td><td>Every item lands in the dashboard as <i>Pending approval</i>.</td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <span class="stepno">Step 1 · Input</span>
+  <h2>The supplier document</h2>
+  <p>The promotion arrives as a Word document in Spanish. The supplier is fictional and the client marked the file as test data. The agency commission and net rate values are hidden on this page.</p>
+  <a class="figure" href="../images/tour-promo-supplier-document.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-supplier-document.jpg" alt="Three pages of the supplier promotion with colored boxes: green around the values the AI extracted, amber around the May departure that is on request and not promotional, red around the confidential commission and net rate lines" loading="lazy"><span class="cap">The original document. <b style="color:#15803d">Green</b>: extracted and verified. <b style="color:#b45309">Amber</b>: the May 16 departure, which is on request and not part of the promotion. <b style="color:#b91c1c">Red</b>: agency-only data that must never reach public content.</span></a>
+  <div class="split2 narrow">
+    <a class="figure" href="../images/tour-promo-intake-form.png" target="_blank" rel="noopener"><img src="../images/tour-promo-intake-form.png" alt="n8n upload form with email subject, email body and the supplier document attached" loading="lazy"><span class="cap">The upload form generated by n8n.</span></a>
+    <div>
+      <h3 style="margin:1.2rem 0 .6rem">What makes this document tricky</h3>
+      <ul class="ticks">
+        <li>Three departures are listed, but only two are promotional. May 16 is “on request” and must not be advertised with the discount.</li>
+        <li>The discount applies only to the second passenger sharing a double room, never to single supplements.</li>
+        <li>The booking window is short: November 18 to 30, 2026.</li>
+        <li>The agency commission and an internal net rate are in the same document as the public offer.</li>
+        <li>The price table becomes loose text once it leaves Word, so dates and prices have to be paired correctly.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="stepno">Step 2 · AI extraction</span>
+  <h2>What the AI pulls out of the document</h2>
+  <p>OpenAI returns a fixed JSON structure (strict schema mode), so the output is always in the same fields. Every value must also come with the sentence it was taken from. This is the verified record for this document, which the system uses as its test reference.</p>
+  <div class="cs-table"><table><thead><tr><th>Departure</th><th>Price per person</th><th>Single supplement</th><th>Availability</th><th>Promotional</th></tr></thead><tbody><tr><td>Mar 14, 2027</td><td>USD 2,195</td><td>USD 495</td><td>Available</td><td><b class="yes">Yes</b></td></tr><tr><td>Apr 18, 2027</td><td>USD 2,395</td><td>USD 575</td><td>Available</td><td><b class="yes">Yes</b></td></tr><tr><td>May 16, 2027</td><td>USD 2,595</td><td>USD 625</td><td>On request</td><td><b class="no">No</b></td></tr></tbody></table></div>
+  <div class="split2">
+    <div class="cs-table"><table><tbody>
+      <tr><td>Tour</td><td>España y Portugal al Completo · 12 days / 11 nights</td></tr>
+      <tr><td>Itinerary</td><td>Madrid → Salamanca → Oporto → Coímbra → Lisboa → Sevilla → Madrid</td></tr>
+      <tr><td>Discount</td><td>20% · Second passenger sharing a double room with a full-fare passenger</td></tr>
+      <tr><td>Booking window</td><td>Nov 18, 2026 to Nov 30, 2026</td></tr>
+      <tr><td>Supplier’s example</td><td>2nd passenger pays USD 1,756</td></tr>
+      <tr><td>Restrictions</td><td>Discount does not apply to single room supplements; Not combinable with other promotions or discounts; Not valid for groups of 10 or more passengers; Subject to availability and supplier confirmation; Bookings must be confirmed within the promotional period</td></tr>
+    </tbody></table></div>
+    <pre class="json">"confidential": {
+  "commission_percent": ■■,
+  "commission_notes": "on the commissionable base fare, before the discount",
+  "net_rates": [{ "departure_date": "2027-03-14", "amount": ■■■■ }]
+}
+"source_quotes": [
+  { "field": "booking_window.end",
+    "quote": "Período de reservas: Del 18 al 30 de noviembre de 2026." },
+  { "field": "departures",
+    "quote": "Salidas promocionales: 14 de marzo y 18 de abril de 2027." }
+]</pre>
+  </div>
+  <p class="note">Agency-only data goes to its own Airtable table that the approval dashboard never shows. Its values also become a blocklist for the leak scanner in Step 3.</p>
+</section>
+
+<section>
+  <span class="stepno">Step 3 · Safeguards</span>
+  <h2>Checks the AI cannot skip</h2>
+  <p>The safeguards are plain code, so they give the same answer every time. Below is their real output on this document (run on Nov 19, 2026). The promotion is marked <b>Needs attention</b> because one departure is on request.</p>
+  <ul class="flags"><li class="fl warn"><span>Check</span><div><code>ON_REQUEST</code>Departure 2027-05-16 is "on request" with the supplier. Confirm availability before advertising it.</div></li><li class="fl info"><span>Info</span><div><code>NOT_PROMOTIONAL</code>2027-05-16 is in the price table but is NOT a promotional departure. It will not be advertised with the discount.</div></li><li class="fl info"><span>Info</span><div><code>EXAMPLE_MATCHES</code>Supplier's worked example (1756) matches our calculation for 2027-03-14.</div></li><li class="fl info"><span>Info</span><div><code>CONFIDENTIAL_FOUND</code>Agency-only data found (commission ■■%, 1 net rate(s)). It is stored separately and blocked from all public content.</div></li><li class="fl info"><span>Info</span><div><code>TEST_DOCUMENT</code>Supplier marked this document as a test / simulation.</div></li></ul>
+  <h3 style="margin:1.6rem 0 .6rem">Discount recalculated, never copied</h3>
+  <p class="lead-p">The system computes the second-passenger price itself and compares it with the supplier’s worked example. For April 18 the supplier gave no example; this figure comes only from the calculation.</p>
+  <div class="cs-table"><table><thead><tr><th>Departure</th><th>1st passenger</th><th>2nd passenger (−20%)</th><th>Total for two</th><th>Savings</th></tr></thead><tbody><tr><td>Mar 14, 2027</td><td>USD 2,195</td><td><b>USD 1,756</b></td><td>USD 3,951</td><td>USD 439</td></tr><tr><td>Apr 18, 2027</td><td>USD 2,395</td><td><b>USD 1,916</b></td><td>USD 4,311</td><td>USD 479</td></tr></tbody></table></div>
+  <h3 style="margin:1.6rem 0 .6rem">What happens when the AI gets something wrong</h3>
+  <p class="lead-p">The same document, with four mistakes an AI model can make: two digits of a price swapped (2,195 → 2,159), the on-request May departure marked promotional, an invented deadline, and a wrong worked example. Result: <b>Blocked</b>, and nothing is generated.</p>
+  <ul class="flags"><li class="fl block"><span>Blocked</span><div><code>PRICE_NOT_IN_DOC</code>Price 2159 for 2027-03-14 does not appear in the supplier document.</div></li><li class="fl block"><span>Blocked</span><div><code>PROMO_DATE_NOT_LISTED</code>2027-05-16 is marked as promotional, but the supplier's list of promotional departures does not include it.</div></li><li class="fl block"><span>Blocked</span><div><code>DEADLINE_NOT_IN_DOC</code>Booking deadline 2026-12-15 not found in the supplier document.</div></li><li class="fl block"><span>Blocked</span><div><code>EXAMPLE_MISMATCH</code>Supplier's worked example (1800) does not match 20% off any promotional departure. Ask the supplier.</div></li></ul>
+  <h3 style="margin:1.6rem 0 .6rem">Confidential data leak scan</h3>
+  <p class="lead-p">Every caption, slide, script and email is scanned before approval, and again just before publishing. The generated campaign below: <b>no leaks found</b>. A test sentence that mentions the commission and net rate is caught on 4 terms: <i>hidden value</i>, <i>hidden value</i>, <i>commission</i>, <i>net rate</i>.</p>
+</section>
+
+<section>
+  <span class="stepno">Step 4 · AI writing</span>
+  <h2>English and Spanish copy</h2>
+  <p>The AI writes both languages together so they say the same thing. It may use only the verified prices, only the promotional departures and only dates inside the booking window, and it must include the deadline and the key terms. The copy below is in the system’s output format for this promotion. In the live demo the same step runs on OpenAI.</p>
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="en">English</button><button role="tab" aria-selected="false" data-tab="es">Español</button></div>
+  <div data-pane="en"><div class="posts"><article class="post"><header><b>Instagram</b><span>EN</span></header><p>Madrid. Porto. Lisbon. Seville. 🇪🇸🇵🇹<br>12 days through the best of Spain &amp; Portugal, with 4-star hotels and daily breakfast.<br><br>20% OFF for the second passenger sharing a double room on our March 14 &amp; April 18, 2027 departures.<br>From USD 2,195.<br><br>Book by November 30.</p><small>#SpainTravel #PortugalTravel #Lisbon #Seville #Porto #EscortedTours</small></article><article class="post"><header><b>Facebook</b><span>EN</span></header><p>Two countries, six unforgettable cities, one easy trip. Our 12-day Spain &amp; Portugal tour takes you from Madrid to Salamanca, Porto, Coimbra, Lisbon and Seville, with 4-star hotels, daily breakfast, guided sightseeing and a Sintra excursion.<br><br>Special offer: the second passenger sharing a double room saves 20% on the March 14 and April 18, 2027 departures. From USD 2,195 per person.<br><br>Book by November 30, 2026.</p><small>#SpainAndPortugal #DemoTravelCo</small></article><article class="post"><header><b>LinkedIn</b><span>EN</span></header><p>Travel advisors: a strong early-booking offer for 2027. Our 12-day Spain &amp; Portugal tour (Madrid, Salamanca, Porto, Coimbra, Lisbon, Seville) includes 4-star hotels, daily breakfast, an escort and sightseeing.<br><br>The second passenger sharing a double room receives 20% off on the March 14 and April 18, 2027 departures, from USD 2,195. Bookings close November 30, 2026.</p><small>#TravelAdvisors #Spain #Portugal</small></article><article class="post"><header><b>Last-chance post</b><span>EN</span></header><p>Last chance! The 20% second-passenger offer on our Spain &amp; Portugal 2027 tour ends November 30. March 14 &amp; April 18 departures, from USD 2,195.</p></article></div></div>
+  <div data-pane="es" hidden><div class="posts"><article class="post"><header><b>Instagram</b><span>ES</span></header><p>Madrid. Oporto. Lisboa. Sevilla. 🇪🇸🇵🇹<br>12 días por lo mejor de España y Portugal, con hoteles 4 estrellas y desayuno diario.<br><br>20% de descuento para el segundo pasajero en habitación doble en las salidas del 14 de marzo y 18 de abril de 2027.<br>Desde USD 2,195.<br><br>Reserva antes del 30 de noviembre.</p><small>#ViajarAEspaña #Portugal #Lisboa #Sevilla #Oporto #CircuitosGuiados</small></article><article class="post"><header><b>Facebook</b><span>ES</span></header><p>Dos países, seis ciudades inolvidables y un viaje sin complicaciones. Nuestro circuito de 12 días recorre Madrid, Salamanca, Oporto, Coímbra, Lisboa y Sevilla, con hoteles 4 estrellas, desayuno diario, visitas guiadas y excursión a Sintra.<br><br>Oferta especial: el segundo pasajero que comparte habitación doble ahorra un 20% en las salidas del 14 de marzo y 18 de abril de 2027. Desde USD 2,195 por persona.<br><br>Reserva antes del 30 de noviembre de 2026.</p><small>#EspañaYPortugal #DemoTravelCo</small></article><article class="post"><header><b>LinkedIn</b><span>ES</span></header><p>Agentes de viajes: una excelente oferta de reserva anticipada para 2027. Circuito de 12 días por España y Portugal con hoteles 4 estrellas, desayuno diario, guía acompañante y visitas.<br><br>El segundo pasajero en habitación doble obtiene un 20% de descuento en las salidas del 14 de marzo y 18 de abril de 2027, desde USD 2,195. Reservas hasta el 30 de noviembre de 2026.</p><small>#AgentesDeViajes #España #Portugal</small></article><article class="post"><header><b>Último aviso</b><span>ES</span></header><p>¡Última oportunidad! El 20% de descuento para el segundo pasajero en nuestro circuito España y Portugal 2027 termina el 30 de noviembre. Salidas 14 de marzo y 18 de abril, desde USD 2,195.</p></article></div></div>
+  <h3 style="margin:1.6rem 0 .6rem">Posting calendar, checked against the deadline</h3>
+  <p class="lead-p">The calendar must stay between today and the booking deadline. A test item was placed after the deadline on purpose; the calendar check removed it.</p>
+  <div class="cs-table"><table><thead><tr><th>Date</th><th>Asset</th><th>Angle</th><th>Check</th></tr></thead><tbody><tr><td>Nov 20, 2026</td><td>Single graphic</td><td>Announcement</td><td><b class="yes">Kept</b></td></tr><tr><td>Nov 22, 2026</td><td>Carousel</td><td>Route and inclusions</td><td><b class="yes">Kept</b></td></tr><tr><td>Nov 24, 2026</td><td>Mailchimp email</td><td>Full offer to subscribers</td><td><b class="yes">Kept</b></td></tr><tr><td>Nov 25, 2026</td><td>Vertical video</td><td>Inspiration reel</td><td><b class="yes">Kept</b></td></tr><tr><td>Nov 29, 2026</td><td>Last-chance post</td><td>Deadline reminder</td><td><b class="yes">Kept</b></td></tr><tr class="off"><td>Dec 3, 2026</td><td>Single graphic</td><td>Test item placed after the deadline on purpose</td><td><b class="no">Removed: after Nov 30 deadline</b></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <span class="stepno">Step 5 · Graphics and carousel</span>
+  <h2>Branded graphics from the approved copy</h2>
+  <p>The template layout is fixed: brand at the top, offer badge, headline, details and deadline. The AI only supplies the text, so prices cannot be misspelled inside an image. The brand here is a placeholder (“Demo Travel Co.”) and the photos are real, freely licensed destination photos. For the client, their own logo, colors and photo library go into the same template.</p>
+  <div class="split2">
+    <a class="figure" href="../images/tour-promo-graphic-en.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-graphic-en.jpg" alt="Instagram graphic in English: 20% off 2nd passenger, Spain and Portugal 2027, from USD 2,195, book by November 30, 2026" loading="lazy"><span class="cap">Single graphic, English.</span></a>
+    <a class="figure" href="../images/tour-promo-graphic-es.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-graphic-es.jpg" alt="Instagram graphic in Spanish: 20% dto. 2º pasajero, España y Portugal 2027, desde USD 2,195" loading="lazy"><span class="cap">Single graphic, Spanish.</span></a>
+  </div>
+  <h3 style="margin:1.4rem 0 .4rem">Six-slide carousel</h3>
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="cen">English</button><button role="tab" aria-selected="false" data-tab="ces">Español</button></div>
+  <div data-pane="cen"><div class="strip"><a href="../images/tour-promo-carousel-en-1.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-1.jpg" alt="Carousel slide 1: Spain &amp; Portugal 2027" loading="lazy"></a><a href="../images/tour-promo-carousel-en-2.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-2.jpg" alt="Carousel slide 2: Your route" loading="lazy"></a><a href="../images/tour-promo-carousel-en-3.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-3.jpg" alt="Carousel slide 3: All the essentials included" loading="lazy"></a><a href="../images/tour-promo-carousel-en-4.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-4.jpg" alt="Carousel slide 4: 20% off the 2nd passenger" loading="lazy"></a><a href="../images/tour-promo-carousel-en-5.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-5.jpg" alt="Carousel slide 5: Mar 14 &amp; Apr 18, 2027" loading="lazy"></a><a href="../images/tour-promo-carousel-en-6.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-en-6.jpg" alt="Carousel slide 6: Book by Nov 30" loading="lazy"></a></div></div>
+  <div data-pane="ces" hidden><div class="strip"><a href="../images/tour-promo-carousel-es-1.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-1.jpg" alt="Carousel slide 1: España y Portugal 2027" loading="lazy"></a><a href="../images/tour-promo-carousel-es-2.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-2.jpg" alt="Carousel slide 2: Tu recorrido" loading="lazy"></a><a href="../images/tour-promo-carousel-es-3.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-3.jpg" alt="Carousel slide 3: Todo lo esencial incluido" loading="lazy"></a><a href="../images/tour-promo-carousel-es-4.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-4.jpg" alt="Carousel slide 4: 20% para el 2º pasajero" loading="lazy"></a><a href="../images/tour-promo-carousel-es-5.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-5.jpg" alt="Carousel slide 5: 14 mar y 18 abr de 2027" loading="lazy"></a><a href="../images/tour-promo-carousel-es-6.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-carousel-es-6.jpg" alt="Carousel slide 6: Reserva antes del 30 nov" loading="lazy"></a></div></div>
+</section>
+
+<section>
+  <span class="stepno">Step 6 · Video</span>
+  <h2>15-second vertical video</h2>
+  <div class="video-wrap">
+    <video controls muted playsinline preload="none" poster="../images/tour-promo-video-poster.jpg"><source src="../images/tour-promo-video-en.mp4" type="video/mp4"></video>
+    <div>
+      <p class="lead-p">Rendered from the AI’s four-scene script: 3 seconds per scene with a slow zoom on each photo, the line sliding in word by word, and an end card with the offer, the two promotional departures, the deadline and the key terms. This uses the same timeline the system sends to Creatomate for every promotion.</p>
+      <div class="cs-table"><table><thead><tr><th>Scene</th><th>Photo</th><th>On-screen text</th></tr></thead><tbody>
+        <tr><td>1</td><td>Madrid</td><td>Spain &amp; Portugal, 2027</td></tr><tr><td>2</td><td>Porto</td><td>Porto, Lisbon, Seville and more</td></tr><tr><td>3</td><td>Sintra</td><td>4-star hotels, daily breakfast</td></tr><tr><td>4</td><td>Seville</td><td>From USD 2,195</td></tr>
+        <tr><td>5</td><td>Brand color</td><td>20% OFF 2nd passenger · Mar 14 &amp; Apr 18, 2027 · Book by November 30, 2026</td></tr>
+      </tbody></table></div>
+      <p class="note">Optional add-on: cinematic AI-generated clips (for example from Higgsfield) can replace the photo scenes. The offer text and end card stay template-based, so prices and dates are never generated by an image model.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="stepno">Step 7 · Human approval</span>
+  <h2>Nothing goes out until a person approves it</h2>
+  <p>Every item lands in an Airtable Interface next to the original supplier file and the safeguard flags. The reviewer can edit any text, ask for changes in plain words or approve. Workflow 2 checks the dashboard every minute.</p>
+  <ol class="flow">
+    <li><b>Pending approval</b>The promotion, its departures and every post, carousel slide, video and email, with the source document next to them.</li>
+    <li><b>Changes requested</b>The reviewer writes a comment such as “make the Facebook post shorter”. The AI rewrites only that item and sends it back to review.</li>
+    <li><b>Approved</b>The leak scan and date checks run once more. The content is marked Scheduled and the Mailchimp test email is sent.</li>
+    <li><b>Edited after approval</b>A fingerprint of the approved text is stored. If anyone changes it later, the item goes back to review automatically.</li>
+    <li><b>Expired or corrected</b>After the booking deadline, or when the supplier sends a correction, the scheduled content is held.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="stepno">Step 8 · Mailchimp</span>
+  <h2>The email campaign and the data behind it</h2>
+  <div class="split2">
+    <a class="figure" href="../images/tour-promo-email-en.jpg" target="_blank" rel="noopener"><img src="../images/tour-promo-email-en.jpg" alt="Mailchimp email in English with hero graphic, intro, offer box with a price table for March 14 and April 18, highlights, a reserve button and terms" loading="lazy"><span class="cap">The English email as built for Mailchimp. The Spanish version is built from the same template.</span></a>
+    <div>
+      <p class="lead-p">Where each part of the email comes from:</p>
+      <div class="cs-table"><table><tbody>
+        <tr><td>Subject and preview</td><td>AI copy: “Spain &amp; Portugal 2027: 20% off your travel companion” / “12 days, 6 cities, from USD 2,195. Book by November 30.”</td></tr>
+        <tr><td>Hero image</td><td>The single graphic from Step 5, same language</td></tr>
+        <tr><td>Price table</td><td>Calculated by the safeguards in Step 3, not written by the AI</td></tr>
+        <tr><td>Departures listed</td><td>Promotional only (Mar 14, Apr 18). May 16 is excluded</td></tr>
+        <tr><td>Terms</td><td>Restrictions from the document, written out in full</td></tr>
+        <tr><td>Footer</td><td>Mailchimp merge tags for the address and unsubscribe link</td></tr>
+        <tr><td>Audience</td><td>The client’s Mailchimp audience. Sending each language only to its own subscribers (by a language field) is set up on the client’s list</td></tr>
+      </tbody></table></div>
+      <p class="lead-p" style="margin-top:1rem">The API calls n8n makes:</p>
+      <pre class="json">POST /3.0/campaigns
+{
+  "type": "regular",
+  "recipients": { "list_id": "&lt;audience&gt;" },
+  "settings": {
+    "title": "Spain &amp; Portugal 2027 – 2nd Passenger 20% Off (EN)",
+    "subject_line": "Spain &amp; Portugal 2027: 20% off your travel companion",
+    "preview_text": "12 days, 6 cities, from USD 2,195. Book by November 30.",
+    "from_name": "Demo Travel Co.",
+    "reply_to": "&lt;team inbox&gt;"
+  }
+}
+PUT /3.0/campaigns/{id}/content   { "html": "&lt;the email below&gt;" }
+POST /3.0/campaigns/{id}/actions/test   (after approval)</pre>
+      <p class="note">Both campaigns are created as drafts. On approval a test email goes to the team. Scheduling the send to the full audience needs a paid Mailchimp plan, so it is part of the client build.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="stepno">Step 9 · Learning loop</span>
+  <h2>Results feed the next campaign</h2>
+  <p>Every Monday, workflow 3 collects results into a Performance table, asks the AI what drives clicks and enquiries, and saves the answer as an active Insight. The next time the AI writes a campaign, it receives that insight and lists how it applied it.</p>
+  <div class="cs-table"><table><thead><tr><th>Channel</th><th>Asset</th><th>Lang</th><th>Angle</th><th>Reach</th><th>Clicks</th><th>Enquiries</th></tr></thead><tbody><tr><td>Instagram</td><td>Video</td><td>ES</td><td>Price in first 3 seconds</td><td>9,800</td><td>131</td><td>7</td></tr><tr><td>Instagram</td><td>Carousel</td><td>EN</td><td>Itinerary day by day</td><td>5,100</td><td>52</td><td>3</td></tr><tr><td>Facebook</td><td>Single graphic</td><td>EN</td><td>Discount badge</td><td>3,900</td><td>61</td><td>4</td></tr><tr><td>Facebook</td><td>Text post</td><td>EN</td><td>Long description</td><td>2,100</td><td>11</td><td>0</td></tr><tr><td>Mailchimp</td><td>Email</td><td>ES</td><td>Price table + deadline in subject</td><td>2,900 sent · 47.5% open</td><td>151</td><td>8</td></tr><tr><td>Mailchimp</td><td>Email</td><td>EN</td><td>Inspiration story, no price</td><td>6,150 sent · 38.0% open</td><td>92</td><td>2</td></tr></tbody></table></div>
+  <p class="note">The rows above are sample data, labeled as such in the system, used until the client’s own results exist. The insight applied to this campaign: “Lead with the price in the first line (best click-through in past posts)”.</p>
+</section>
+
+<section>
+  <span class="stepno">Status</span>
+  <h2>What is built and what comes next</h2>
+  <div class="status">
+    <div class="s1"><h3>Working now</h3><ul><li>Upload form; Word, PDF and text reading</li><li>AI extraction with source quotes</li><li>Price, date, discount, expiry and promotional-departure checks</li><li>Confidential data separation and leak scan</li><li>Supplier correction detection (version 2, old content held)</li><li>EN/ES posts, carousel, video script, email, calendar</li><li>Graphics, carousel and video templates</li><li>Mailchimp drafts and test email</li><li>Approval guard and learning loop</li></ul></div>
+    <div class="s2"><h3>Built for the client</h3><ul><li>Promotions inbox connection</li><li>Client logo, colors, fonts and photo library</li><li>Facebook, Instagram and LinkedIn scheduling through Metricool</li><li>Mailchimp scheduling to the real audience</li><li>Reviewer alerts</li><li>Real performance data and a Looker Studio report</li></ul></div>
+    <div class="s3"><h3>Optional extras</h3><ul><li>Custom web portal instead of Airtable</li><li>More channels and languages</li><li>AI-generated video clips and voice-over</li><li>Booking and website attribution</li></ul></div>
+  </div>
+  <p class="credits">Destination photos from Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Tram_28_at_Largo_de_Santa_Luzia_in_Lisbon,_20250606_1958_0419.jpg">Tram 28 at Largo de Santa Luzia in Lisbon, 20250606 1958 0419</a> by Jakub Hałun (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Cais_da_Ribeira_in_Porto_(7).jpg">Cais da Ribeira in Porto (7)</a> by Krzysztof Golik (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Rabelo_boats_and_Ribeira_seen_from_Cais_de_Gaia,_20250605_1623_9879.jpg">Rabelo boats and Ribeira seen from Cais de Gaia, 20250605 1623 9879</a> by Jakub Hałun (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Plaza_de_Espa%C3%B1a_(Sevilla)_-_01.jpg">Plaza de España (Sevilla) - 01</a> by Carlos Delgado (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Pena_Palace,_Sintra,_Portugal,_20250606_1037_0005.jpg">Pena Palace, Sintra, Portugal, 20250606 1037 0005</a> by Jakub Hałun (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Gran_V%C3%ADa_-_01.jpg">Gran Vía - 01</a> by Carlos Delgado (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Torre_das_camp%C3%A1s._S%C3%A9_vella_de_Salamanca._Espa%C3%B1a_eue.jpg">Torre das campás. Sé vella de Salamanca. España eue</a> by Lmbuga (Luis Miguel Bugallo Sánchez) (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Coimbra_April_2018-23.jpg">Coimbra April 2018-23</a> by Alvesgaspar (CC BY-SA 4.0). The supplier, prices and dates are fictional test data provided by the client; the brand shown is a placeholder.</p>
+  <div class="pager"><a href="ai-marketing-automation-system.html"><span>← Back to the case study</span><b>AI marketing automation system for a tour operator</b></a><a class="next" href="ai-video-scheduling-system.html"><span>Next project →</span><b>AI video scheduling system for LinkedIn, YouTube, Facebook &amp; Instagram</b></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+document.querySelectorAll('.tabs').forEach(function(t){var bs=t.querySelectorAll('button');bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.setAttribute('aria-selected',x===b);var p=t.parentNode.querySelector('[data-pane="'+x.dataset.tab+'"]');if(p)p.hidden=x!==b})}})});
+</script>
+</body>
+</html>

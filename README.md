@@ -28,6 +28,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Data annotation (AI training data) | `data-annotation.html` |
 | Reading comprehension dataset (1.5M Q&A) | `projects/reading-comprehension-dataset-generation.html` |
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
+| Marketing automation: step-by-step build on a supplier promotion | `projects/tour-promotion-campaign-walkthrough.html` |
 | AI video scheduling system (LinkedIn, YouTube, Facebook, Instagram) | `projects/ai-video-scheduling-system.html` |
 | Shopify RAG support chatbot | `projects/shopify-rag-support-chatbot.html` |
 | Multi-agent RFP response assistant | `projects/multi-agent-rfp-response-assistant.html` |
@@ -43,4 +44,4 @@ Every project has its own page, so you can send a client the link to just that p
 
 Each page has a **Copy page link** button. All pages share one stylesheet: `assets/style.css`.
 
-Example photos on the data annotation page come from Wikimedia Commons (credits are listed at the bottom of that page).
+Example photos on the data annotation page and the destination photos on the step-by-step build page come from Wikimedia Commons (credits are listed at the bottom of each page).
