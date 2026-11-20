@@ -30,6 +30,7 @@ Every project has its own page, so you can send a client the link to just that p
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
 | Marketing automation: step-by-step build on a supplier promotion | `projects/tour-promotion-campaign-walkthrough.html` |
 | AI video scheduling system (LinkedIn, YouTube, Facebook, Instagram) | `projects/ai-video-scheduling-system.html` |
+| Hiring-trigger lead system (agencies hiring sales roles → Instantly) | `projects/hiring-trigger-lead-system.html` |
 | Shopify RAG support chatbot | `projects/shopify-rag-support-chatbot.html` |
 | Multi-agent RFP response assistant | `projects/multi-agent-rfp-response-assistant.html` |
 | Mobile app data extraction pipeline | `projects/mobile-app-data-extraction-pipeline.html` |
