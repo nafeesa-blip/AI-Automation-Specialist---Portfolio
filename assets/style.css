@@ -372,3 +372,28 @@ section.white{background:#fff;border-block:1px solid var(--line)}
 .cs-table td:first-child{font-weight:600;color:var(--ink);width:45%}
 .gallery.two>.figure:first-child:nth-last-child(3){grid-column:1/-1}
 
+
+/* ===== E-commerce listing samples ===== */
+section.tight{padding-top:clamp(3rem,5vw,4rem);padding-bottom:clamp(3rem,5vw,4rem)}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:1.6rem}
+.lcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem;box-shadow:0 1px 2px rgba(15,27,45,.04)}
+.lcard.after{border-color:#86efac;box-shadow:0 12px 32px rgba(22,163,74,.08)}
+.lcard-h{margin:-.1rem 0 .9rem}
+.lcard-h b{display:inline-block;padding:.22rem .7rem;border-radius:99px;font:700 .74rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.lcard.before .lcard-h b{background:#fef2f2;color:#b91c1c}
+.lcard.after .lcard-h b{background:#f0fdf4;color:#15803d}
+.lf+.lf{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}
+.lf-h{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.35rem;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.lf-h .cc{font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;padding:.08rem .5rem;border-radius:6px;background:var(--soft);color:var(--accent-d)}
+.lf p{margin:0;color:var(--ink);font-size:.95rem;line-height:1.55}
+.lcard.before .lf p,.lcard.before .lf li{color:#64748b}
+.lf ul{margin:0;padding-left:1.1rem;display:grid;gap:.4rem;font-size:.92rem;line-height:1.55;color:#334155}
+.ltags{display:flex;flex-wrap:wrap;gap:.35rem}
+.ltags span{padding:.2rem .6rem;border:1px solid var(--line-2);border-radius:99px;font-size:.8rem;color:#334155}
+.mono-box{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .8rem;margin:1rem 0;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:500 .88rem/1.6 ui-monospace,Consolas,monospace;color:#334155}
+.mono-box span{font:700 .72rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mono-box em{font:600 .78rem Inter,sans-serif;font-style:normal;color:var(--accent-d);margin-left:auto}
+.mock.brief{margin-top:1.2rem;line-height:1.75}
+.ticks.small{gap:.6rem}
+.ticks.small li{font-size:.88rem;line-height:1.5}
+@media(max-width:800px){.ba{grid-template-columns:1fr}}

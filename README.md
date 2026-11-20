@@ -26,6 +26,12 @@ Every project has its own page, so you can send a client the link to just that p
 | Home | `index.html` |
 | AI automation (all projects) | `ai-automation.html` |
 | Data annotation (AI training data) | `data-annotation.html` |
+| E-commerce listing optimization (all platforms) | `ecommerce-listings.html` |
+| Amazon listing optimization (health & intimate wellness) | `projects/amazon-listing-optimization-health-wellness.html` |
+| Shopify product page optimization (supplement) | `projects/shopify-product-page-optimization-supplement.html` |
+| Walmart Marketplace listing optimization | `projects/walmart-marketplace-listing-optimization.html` |
+| eBay listing optimization | `projects/ebay-listing-optimization.html` |
+| Etsy listing SEO optimization | `projects/etsy-listing-seo-optimization.html` |
 | Reading comprehension dataset (1.5M Q&A) | `projects/reading-comprehension-dataset-generation.html` |
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
 | Marketing automation: step-by-step build on a supplier promotion | `projects/tour-promotion-campaign-walkthrough.html` |
