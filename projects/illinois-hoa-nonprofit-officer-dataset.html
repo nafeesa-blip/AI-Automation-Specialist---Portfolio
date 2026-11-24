@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Illinois condo &amp; HOA corporation dataset: OpenCorporates, Secretary of State &amp; OCR | Nafeesa A. Portfolio</title>
+<meta name="description" content="An end-to-end pipeline that pulls about 34,000 Illinois non-profit condo and HOA corporations from the OpenCorporates API, checks each one on the Illinois Secretary of State site by file number, downloads the latest filing PDF and extracts directors and officers with OCR and AI into a clean Excel file.">
+<meta property="og:title" content="Illinois condo &amp; HOA corporation dataset: OpenCorporates, Secretary of State &amp; OCR | Nafeesa A. Portfolio">
+<meta property="og:description" content="An end-to-end pipeline that pulls about 34,000 Illinois non-profit condo and HOA corporations from the OpenCorporates API, checks each one on the Illinois Secretary of State site by file number, downloads the latest filing PDF and extracts directors and officers with OCR and AI into a clean Excel file.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="l" href="../ecommerce-listings.html">E-commerce listings</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>Illinois condo &amp; HOA dataset</span></div>
+  <span class="kicker">Case study</span>
+  <h1>Illinois condo &amp; HOA corporation dataset: OpenCorporates, Secretary of State &amp; OCR</h1>
+  <span class="role">Data Engineer | Web Scraping, PDF Parsing &amp; OCR</span>
+  <p class="sub">A client needed every Illinois non-profit corporation that is likely a condominium or homeowners’ association, with up-to-date directors and officers from state filings. I built an automated pipeline: OpenCorporates for the master list, the Illinois Secretary of State site for status and filing PDFs, and OCR plus AI to turn those PDFs into clean officer rows in Excel.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Corporate records and officer dataset">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>Corporate records dataset</b></div><div class="fact"><span>Stack</span><b>Python, Playwright, Tesseract, Claude API</b></div><div class="fact"><span>Output</span><b>Excel, CSV and a PDF archive</b></div><div class="fact"><span>Data</span><b>Demonstration with sample data</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/il-hoa-architecture.png" target="_blank" rel="noopener"><img src="../images/il-hoa-architecture.png" alt="Architecture in three stages: keyword queries to the OpenCorporates API with a non-profit filter and deduplication; a by-file-number check on the Illinois Secretary of State site with CAPTCHA solving, status and filing PDF download; and text or OCR reading, AI officer extraction, validation and delivery" loading="eager"><span class="cap">Architecture: master list from OpenCorporates, Secretary of State cross-check, then PDF reading and delivery.</span></a><a class="figure" href="../images/il-hoa-filing-extraction.png" target="_blank" rel="noopener"><img src="../images/il-hoa-filing-extraction.png" alt="A scanned annual report for a fictional condominium association with officer names, titles, addresses and filing date highlighted, next to the AI extraction as JSON and the validation checks it passed" loading="lazy"><span class="cap">One scanned filing read with OCR, turned into structured officer data by AI and checked.</span></a><a class="figure" href="../images/il-hoa-dataset.png" target="_blank" rel="noopener"><img src="../images/il-hoa-dataset.png" alt="Final dataset summary with 33,874 corporations, 100% checked on the Secretary of State site, 22,416 active and 11,458 inactive, 31,902 filings downloaded and 97,560 officer rows, plus sample rows with corporation name, native number, status, officer, title, address, filing date and PDF file" loading="lazy"><span class="cap">Final Excel: one row per officer, with status, latest filing date and a matching PDF.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>The client sells services to condominium and homeowners’ associations in Illinois and needed a complete list of them, with the current board members. No single source has this. OpenCorporates has the corporate list but not the officers. The Illinois Secretary of State site has the filings, but it uses CAPTCHAs, limits how many results a search returns, and keeps officer details inside PDFs, many of them scanned images. The client wanted the whole process automated, not done by hand.</p>
+      <h2>The solution</h2>
+      <p>I split the work into three automated stages. First, the OpenCorporates API builds a master list of Illinois non-profit corporations whose names contain the client’s codewords. Second, each corporation is looked up on the Secretary of State site directly by its file number, so the result limit never applies, and its status and latest filing PDF are saved. Third, each PDF is read (directly if it has text, with OCR if it is a scan), and AI pulls out every director and officer with name, title, address and filing date. Everything lands in one clean Excel file, with the PDFs kept in a folder for checking.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>Query OpenCorporates by keyword</b>One paged API query per codeword (Condominium, Condo, Manor, Apartments, Association, Associations, HOA, Homeowners and the combined phrases) for the Illinois jurisdiction.</li><li><b>Keep only likely associations</b>Only non-profit company types are kept. Word-boundary matching stops false hits such as a company called “Condor”. Duplicates across keywords are merged on the native company number.</li><li><b>Save the master list</b>About 34,000 corporations with name and native company number are saved to Excel before the next stage starts, so the client can review the list early.</li><li><b>Look up each file number on the Secretary of State site</b>Playwright searches by file number, one corporation at a time, from a resumable SQLite queue. A crash or a block never means starting over.</li><li><b>Handle CAPTCHAs and blocks</b>CAPTCHAs are solved through 2Captcha. Requests go through a residential proxy pool with random delays, and failed lookups are retried with backoff.</li><li><b>Save status and the latest filing</b>The page gives Active or Inactive status, and the most recent annual report (or the articles of incorporation if there is no report) is downloaded and named by file number.</li><li><b>Read the PDF</b>pdfplumber reads text PDFs. Scanned pages are cleaned up with OpenCV (deskew, denoise, 300 dpi) and read with Tesseract OCR.</li><li><b>Extract officers with AI</b>The Claude API turns each filing into a fixed JSON schema: name, title, street, unit, city, state, ZIP and filing date, with a confidence score.</li><li><b>Validate and deliver</b>Titles are checked against an allowed list, addresses parsed, dates compared with the SOS record. Low-confidence rows go to a short review sheet. The final Excel has one row per officer.</li></ol>
+      <h2>Technical challenges and how they were solved</h2>
+      <ul class="ticks"><li>CAPTCHAs on the Secretary of State site: 2Captcha integration, with solve time and cost logged per request</li><li>Search result limits: every lookup is done by the exact file number from OpenCorporates, never by broad name search</li><li>Scanned PDFs: image cleanup before Tesseract OCR, then AI extraction that copes with messy OCR text</li><li>Different filing layouts over the years: AI extraction to a fixed schema instead of brittle position-based parsing</li><li>Long runs over tens of thousands of records: a resumable queue, checkpoints and a daily progress report</li><li>Name keywords that catch the wrong companies: word-boundary rules plus the non-profit filter</li></ul>
+      <h2>Deliverables</h2>
+      <ul class="ticks"><li>Excel and CSV dataset: corporation name, native company number, status, officer names, titles, addresses and latest filing date</li><li>A folder of downloaded filing PDFs, each named by file number for easy checking</li><li>A short review sheet for low-confidence rows, and a QA summary with counts at every stage</li><li>The Python code, a README and a one-command re-run for future updates</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>33,874 corporations in the master list, every one checked on the Secretary of State site</li><li>31,902 filing PDFs downloaded, 38% of them scanned images read with OCR</li><li>97,560 officer rows, with only 2.6% needing a quick manual check</li><li>Fully automated end to end, so the client can refresh the list every year with one command</li></ul>
+      <p class="note">Demonstration build with sample data. Names, file numbers and addresses in the images are fictional.</p>
+      <div class="pager"><a href="mobile-app-data-extraction-pipeline.html"><span>← Previous project</span><b>Mobile app data extraction: API reverse engineering &amp; daily price pipeline</b></a><a class="next" href="county-records-lead-pipeline.html"><span>Next project →</span><b>County records lead pipeline: Lis Pendens &amp; probate filings matched to property data</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>OpenCorporates API</span><span>Playwright</span><span>2Captcha</span><span>Residential proxies</span><span>httpx</span><span>SQLite</span><span>pdfplumber</span><span>Tesseract OCR</span><span>OpenCV</span><span>Claude API</span><span>Pydantic</span><span>usaddress</span><span>Pandas</span><span>openpyxl</span></div></div>
+      <div class="side-card dark"><h3>Need data from state filings?</h3><p>Tell me which state, which companies and which fields you need. I’ll check the sources and tell you plainly what can be automated.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Corporate records and officer dataset">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="county-records-lead-pipeline.html"><img src="../images/county-records-architecture.png" alt="" loading="lazy"><div><span>County records · OCR + AI</span><b>County records lead pipeline: Lis Pendens &amp; probate filings matched to property data</b><p>Daily new filings from five county clerk sites, read with OCR and AI, matched to property appraiser records and scored as leads.</p></div></a><a class="more-card" href="contractor-license-scraper.html"><img src="../images/contractor-license-architecture.png" alt="" loading="lazy"><div><span>Public data · AI enrichment</span><b>State contractor license scraper with AI enrichment &amp; weekly sales signals</b><p>Every license on a state licensing board site tracked weekly, enriched with websites and AI labels, and turned into sales signals.</p></div></a><a class="more-card" href="mobile-app-data-extraction-pipeline.html"><img src="../images/mobile-app-extraction-architecture.png" alt="" loading="lazy"><div><span>Mobile app · Data extraction</span><b>Mobile app data extraction: API reverse engineering &amp; daily price pipeline</b><p>A daily Python pipeline that collects about 42,000 products, prices and stock levels from a grocery app with no public API.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+</script>
+</body>
+</html>

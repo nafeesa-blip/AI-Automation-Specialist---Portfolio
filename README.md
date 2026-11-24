@@ -40,6 +40,9 @@ Every project has its own page, so you can send a client the link to just that p
 | Shopify RAG support chatbot | `projects/shopify-rag-support-chatbot.html` |
 | Multi-agent RFP response assistant | `projects/multi-agent-rfp-response-assistant.html` |
 | Mobile app data extraction pipeline | `projects/mobile-app-data-extraction-pipeline.html` |
+| Illinois condo & HOA corporation dataset (OpenCorporates, IL SOS, OCR) | `projects/illinois-hoa-nonprofit-officer-dataset.html` |
+| County records lead pipeline (Lis Pendens & probate) | `projects/county-records-lead-pipeline.html` |
+| State contractor license scraper | `projects/contractor-license-scraper.html` |
 | AI lead intelligence & CRM automation | `projects/ai-lead-intelligence-crm-automation.html` |
 | AI recruiter outreach agent | `projects/ai-recruiter-outreach-agent.html` |
 | Business research & strategic analysis | `projects/business-research-strategic-analysis.html` |

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>County records lead pipeline: Lis Pendens &amp; probate filings matched to property data | Nafeesa A. Portfolio</title>
+<meta name="description" content="A daily pipeline that collects new Lis Pendens and probate filings from five Florida county clerk sites, reads each recorded document with OCR and AI, matches it to the property appraiser record and delivers scored leads to Google Sheets and a CRM by 7 a.m.">
+<meta property="og:title" content="County records lead pipeline: Lis Pendens &amp; probate filings matched to property data | Nafeesa A. Portfolio">
+<meta property="og:description" content="A daily pipeline that collects new Lis Pendens and probate filings from five Florida county clerk sites, reads each recorded document with OCR and AI, matches it to the property appraiser record and delivers scored leads to Google Sheets and a CRM by 7 a.m.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="l" href="../ecommerce-listings.html">E-commerce listings</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>County records lead pipeline</span></div>
+  <span class="kicker">Case study</span>
+  <h1>County records lead pipeline: Lis Pendens &amp; probate filings matched to property data</h1>
+  <span class="role">Data Engineer | Public Records Scraping &amp; Document AI</span>
+  <p class="sub">A real estate investment team was copying new foreclosure and probate filings from county websites by hand every morning. I built a pipeline that collects them from five county clerk sites, reads each recorded document with OCR and AI, matches the property on the county appraiser site and delivers scored leads before the team starts work.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: County records scraping">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>Daily public records lead pipeline</b></div><div class="fact"><span>Stack</span><b>Python, Playwright, Tesseract, OpenAI API</b></div><div class="fact"><span>Output</span><b>Google Sheets, CRM, document archive</b></div><div class="fact"><span>Data</span><b>Demonstration with sample data</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/county-records-architecture.png" target="_blank" rel="noopener"><img src="../images/county-records-architecture.png" alt="Architecture in three stages: a daily date search on each county's official records site with one adapter per county; OCR, AI field extraction and a parcel match on the property appraiser site; then cleaning, deduplication, lead scoring, delivery to Google Sheets and a CRM, and monitoring" loading="eager"><span class="cap">Architecture: daily collection, document reading and property matching, then scoring and delivery.</span></a><a class="figure" href="../images/county-records-document.png" target="_blank" rel="noopener"><img src="../images/county-records-document.png" alt="A fictional Notice of Lis Pendens with the case number, plaintiff, defendants, property address, legal description, parcel ID and recording date highlighted, next to the matched property record with owner, mailing address, absentee flag, homestead, market value, last sale, equity, duplicate check and a lead score of 86" loading="lazy"><span class="cap">One recorded document read with OCR and AI, matched to its parcel and scored.</span></a><a class="figure" href="../images/county-records-leads.png" target="_blank" rel="noopener"><img src="../images/county-records-leads.png" alt="Daily summary with 214 new filings, all documents read, 96.7% matched to a parcel, 31 duplicates removed and a 22 minute run, plus the lead sheet sorted by score with county, filing type, property, owner, owner location and market value" loading="lazy"><span class="cap">Daily lead sheet: new filings from five counties, sorted by score, each linked to its document.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>The team buys properties from owners facing foreclosure or settling an estate. Every morning, two assistants searched five county clerk websites for new Lis Pendens and probate filings, opened each scanned document, copied the property details and then looked up the owner on the property appraiser site. It took about five hours a day, leads were often a day late, and the same property was sometimes entered twice.</p>
+      <h2>The solution</h2>
+      <p>Each county site got its own small adapter, because every county uses different search software. A scheduled run searches yesterday’s filings, downloads the recorded documents, reads them with OCR and uses AI to pull out the case details and the parcel ID or property address. The parcel is then looked up on the county property appraiser site for the owner, mailing address and value. Leads are deduplicated, scored and delivered to a Google Sheet and the team’s CRM before 7 a.m., each with a link to the original document.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>Search new filings by date</b>Each county adapter searches the official records site for yesterday’s recordings of the chosen document types (Lis Pendens, probate petitions, letters of administration).</li><li><b>Handle each portal’s quirks</b>Disclaimer pages, session tokens, paging and occasional CAPTCHAs are handled per county. Settings for each county live in one YAML file.</li><li><b>Download the recorded document</b>Multi-page TIFF or PDF images are saved to an S3 archive with the instrument number as the file name.</li><li><b>Read the document with OCR</b>Pages are cleaned up with OpenCV and read with Tesseract. Stamps, faint scans and two-column layouts are handled.</li><li><b>Pull out the key fields with AI</b>The OpenAI API turns the OCR text into a fixed JSON schema: case number, plaintiff, defendants, property address, legal description, parcel ID and recording date.</li><li><b>Match the property</b>The parcel ID (or the address, with fuzzy matching) is looked up on the county property appraiser site for owner, mailing address, market value, last sale and homestead status.</li><li><b>Score and deliver</b>Absentee owner, estimated equity, homestead and filing type give a 0 to 100 score. New leads are pushed to Google Sheets and the CRM, and Slack alerts the team if a county returns zero rows or its site changes.</li></ol>
+      <h2>Technical challenges and how they were solved</h2>
+      <ul class="ticks"><li>Five counties, five different websites: one adapter per county behind a shared interface, so a site change only touches one file</li><li>Documents are images, not text: OCR with image cleanup, then AI extraction that copes with OCR errors</li><li>Parcel IDs missing from some documents: address and legal description matched against appraiser data with fuzzy matching</li><li>The same property filed in more than one record: deduplication on parcel ID and normalised address across 90 days</li><li>Sites that change without notice: daily checks that alert on zero results or missing fields</li></ul>
+      <h2>Responsible use</h2>
+      <ul class="ticks"><li>Only public court and property records, the same data anyone can view on the county sites</li><li>Low request rates during off-peak hours, following each site’s terms of use</li><li>Original documents are kept so every lead can be checked against its source</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>About 200 new filings a day collected, read and matched in 22 minutes instead of about 5 hours by hand</li><li>96.7% of filings matched to a parcel automatically, the rest sent to a short review list</li><li>Leads ready in the CRM by 7 a.m., a full day earlier than before</li><li>No more duplicate entries, and every lead links back to its recorded document</li></ul>
+      <p class="note">Demonstration build with sample data. Names, addresses, case numbers and values in the images are fictional.</p>
+      <div class="pager"><a href="illinois-hoa-nonprofit-officer-dataset.html"><span>← Previous project</span><b>Illinois condo &amp; HOA corporation dataset: OpenCorporates, Secretary of State &amp; OCR</b></a><a class="next" href="contractor-license-scraper.html"><span>Next project →</span><b>State contractor license scraper with AI enrichment &amp; weekly sales signals</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>Playwright</span><span>httpx</span><span>2Captcha</span><span>Tesseract OCR</span><span>OpenCV</span><span>OpenAI API</span><span>Pydantic</span><span>RapidFuzz</span><span>usaddress</span><span>Pandas</span><span>PostgreSQL</span><span>AWS S3</span><span>Google Sheets API</span><span>CRM webhooks</span><span>Slack</span><span>cron</span></div></div>
+      <div class="side-card dark"><h3>Need data from county websites?</h3><p>Tell me which counties and which record types you need. I’ll check each site and tell you plainly what can be automated.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: County records scraping">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="illinois-hoa-nonprofit-officer-dataset.html"><img src="../images/il-hoa-architecture.png" alt="" loading="lazy"><div><span>Web scraping · OCR</span><b>Illinois condo &amp; HOA corporation dataset: OpenCorporates, Secretary of State &amp; OCR</b><p>About 34,000 Illinois non-profit condo and HOA corporations, checked on the Secretary of State site, with officers read from filing PDFs.</p></div></a><a class="more-card" href="contractor-license-scraper.html"><img src="../images/contractor-license-architecture.png" alt="" loading="lazy"><div><span>Public data · AI enrichment</span><b>State contractor license scraper with AI enrichment &amp; weekly sales signals</b><p>Every license on a state licensing board site tracked weekly, enriched with websites and AI labels, and turned into sales signals.</p></div></a><a class="more-card" href="mobile-app-data-extraction-pipeline.html"><img src="../images/mobile-app-extraction-architecture.png" alt="" loading="lazy"><div><span>Mobile app · Data extraction</span><b>Mobile app data extraction: API reverse engineering &amp; daily price pipeline</b><p>A daily Python pipeline that collects about 42,000 products, prices and stock levels from a grocery app with no public API.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+</script>
+</body>
+</html>
