@@ -32,6 +32,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Walmart Marketplace listing optimization | `projects/walmart-marketplace-listing-optimization.html` |
 | eBay listing optimization | `projects/ebay-listing-optimization.html` |
 | Etsy listing SEO optimization | `projects/etsy-listing-seo-optimization.html` |
+| AI Meta ad creatives (automotive accessories: research, hypotheses, image & video ads) | `projects/ai-meta-ad-creatives-automotive.html` |
 | Reading comprehension dataset (1.5M Q&A) | `projects/reading-comprehension-dataset-generation.html` |
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
 | Marketing automation: step-by-step build on a supplier promotion | `projects/tour-promotion-campaign-walkthrough.html` |
@@ -54,4 +55,4 @@ Every project has its own page, so you can send a client the link to just that p
 
 Each page has a **Copy page link** button. All pages share one stylesheet: `assets/style.css`.
 
-Example photos on the data annotation page and the destination photos on the step-by-step build page come from Wikimedia Commons (credits are listed at the bottom of each page).
+Example photos on the data annotation page and the destination photos on the step-by-step build page and the vehicle and floor-liner photos on the Meta ad creatives page come from Wikimedia Commons (credits are listed at the bottom of each page).

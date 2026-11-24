@@ -26,12 +26,28 @@
     <div class="fact"><span>Workflow tools</span><b>n8n, Make, Zapier, Apps Script</b></div>
     <div class="fact"><span>AI models</span><b>OpenAI, Claude, Gemini</b></div>
     <div class="fact"><span>Integrations</span><b>HubSpot, Salesforce, Slack, Gmail, Sheets, REST APIs</b></div>
-    <div class="fact"><span>Case studies</span><b>18 projects below</b></div>
+    <div class="fact"><span>Case studies</span><b>19 projects below</b></div>
   </div>
 </header>
 <main>
 <section id="projects">
   <span class="kicker">Case studies</span><h2>Selected projects</h2><p class="lead">Real workflows, clear thinking, useful outcomes. Click any project to see the full details.</p>
+  <article class="proj rev">
+    <div class="shot">
+      <div class="stack">
+        <button type="button" aria-label="Open the salt season ad" data-zoom><img src="images/meta-ads-creative-salt-season.jpg" alt="Finished Meta ad: a red pickup truck in falling snow with the headline Salt season starts now. Is your carpet ready? and an inset of a rubber floor liner" loading="lazy"></button>
+        <button type="button" aria-label="Open the research board" data-zoom><img src="images/meta-ads-research.png" alt="Research board with customer review themes, competitor ad angles from Meta Ad Library, customer quotes and the three angle gaps to test" loading="lazy"></button>
+      </div>
+      <small>A finished ad and the research behind it. Open the project for all five creatives, the video and the readout.</small>
+    </div>
+    <div>
+      <h3>Research-led AI Meta ad creatives for an automotive accessories brand</h3>
+      <div class="role">AI Creative Developer | Creative Strategy, Scripting &amp; AI Image/Video Production</div>
+      <p>A weekly system that takes Meta ads from idea to upload-ready file. Customer reviews, competitor ads in Meta Ad Library and the account’s past winners show which angles are missing. Each concept gets one written hypothesis and a one-page brief for the owner to approve. The finished image and video ads are built from real photos with AI, and a 7-day readout decides what to scale, iterate or kill. One week shown: 4 static ads, a 15-second video and the test results.</p>
+      <h4>Built with</h4>
+      <div class="chips"><span>Creative Strategy</span><span>Anthropic Claude</span><span>Meta Ad Library</span><span>AI Image &amp; Video</span><span>Ad Scripting</span><span>FFmpeg</span></div><a class="project-open" href="projects/ai-meta-ad-creatives-automotive.html">View project</a>
+    </div>
+  </article>
   <article class="proj"><div class="shot"><div class="stack"><button type="button" aria-label="Open the pipeline diagram" data-zoom><img src="images/rc-dataset-pipeline.svg" alt="Pipeline diagram: raw articles, prompt design, vLLM inference with gpt-oss-20b, JSON repair, validation with a retry queue, cleaning and enrichment, and 1.5 million Q&amp;A pairs exported as JSON and CSV" loading="lazy"></button><button type="button" aria-label="Open the dataset sample" data-zoom><img src="images/rc-dataset-sample.png" alt="Spreadsheet sample of the generated dataset with ID, source text, language, source URL, type, processing date, question, options, answer and analysis columns" loading="lazy"></button></div><small>Pipeline overview and a sample of the generated dataset.</small></div><div><h3>Large-scale reading comprehension dataset generation (1.5M Q&amp;A)</h3><div class="role">AI Engineer | LLM Data Pipeline Developer</div><p>A high-throughput synthetic data pipeline that turns raw English articles into structured reading comprehension questions. Each article produces 7 multiple-choice questions across four skill categories, for a final dataset of 1.5 million Q&amp;A pairs ready for LLM training and evaluation. The pipeline repairs malformed JSON, validates every question, retries failures automatically and tags each record with rich metadata.</p><h4>Built with</h4><div class="chips"><span>Python</span><span>vLLM</span><span>gpt-oss-20b</span><span>PyTorch (CUDA)</span><span>Pandas</span><span>Prompt engineering</span></div><a class="project-open" href="projects/reading-comprehension-dataset-generation.html">View project</a></div></article>
   <article class="proj rev">
     <div class="shot">
@@ -319,7 +335,7 @@ document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(
 document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
 </script>
 <script>
-var PG=["projects/reading-comprehension-dataset-generation.html", "projects/ai-marketing-automation-system.html", "projects/ai-video-scheduling-system.html", "projects/hiring-trigger-lead-system.html", "projects/shopify-rag-support-chatbot.html", "projects/multi-agent-rfp-response-assistant.html", "projects/mobile-app-data-extraction-pipeline.html", "projects/illinois-hoa-nonprofit-officer-dataset.html", "projects/county-records-lead-pipeline.html", "projects/contractor-license-scraper.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
+var PG=["projects/ai-meta-ad-creatives-automotive.html", "projects/reading-comprehension-dataset-generation.html", "projects/ai-marketing-automation-system.html", "projects/ai-video-scheduling-system.html", "projects/hiring-trigger-lead-system.html", "projects/shopify-rag-support-chatbot.html", "projects/multi-agent-rfp-response-assistant.html", "projects/mobile-app-data-extraction-pipeline.html", "projects/illinois-hoa-nonprofit-officer-dataset.html", "projects/county-records-lead-pipeline.html", "projects/contractor-license-scraper.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
 document.querySelectorAll('#projects .proj').forEach(function(c,i){c.addEventListener('click',function(e){if(e.target.closest('a'))return;location.href=PG[i]})});
 </script>
 </body>
