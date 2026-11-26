@@ -27,6 +27,8 @@ Every project has its own page, so you can send a client the link to just that p
 | AI automation (all projects) | `ai-automation.html` |
 | Data annotation (AI training data) | `data-annotation.html` |
 | E-commerce listing optimization (all platforms) | `ecommerce-listings.html` |
+| SEO & Google Shopping (all SEO work) | `seo.html` |
+| Base44 shopfront SEO & Google Shopping (3-month plan, sample) | `projects/base44-shopfront-seo-google-shopping.html` |
 | Amazon listing optimization (health & intimate wellness) | `projects/amazon-listing-optimization-health-wellness.html` |
 | Shopify product page optimization (supplement) | `projects/shopify-product-page-optimization-supplement.html` |
 | Walmart Marketplace listing optimization | `projects/walmart-marketplace-listing-optimization.html` |
