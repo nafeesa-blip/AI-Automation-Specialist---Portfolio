@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>17-agent AI content and UGC ad studio with voice and browser agents | Nafeesa A. Portfolio</title>
+<meta name="description" content="A team of 17 AI agents that researches, scripts, voices, generates, edits, checks and posts videos for 4 content niches and makes 30-second UGC ads, with Vapi and Retell voice agents, Playwright browser agents and owner approval before anything goes live.">
+<meta property="og:title" content="17-agent AI content and UGC ad studio with voice and browser agents | Nafeesa A. Portfolio">
+<meta property="og:description" content="A team of 17 AI agents that researches, scripts, voices, generates, edits, checks and posts videos for 4 content niches and makes 30-second UGC ads, with Vapi and Retell voice agents, Playwright browser agents and owner approval before anything goes live.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="l" href="../ecommerce-listings.html">E-commerce listings</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>Multi-agent systems · Voice agents</span></div>
+  <span class="kicker">Case study</span>
+  <h1>17-agent AI content and UGC ad studio with voice and browser agents</h1>
+  <span class="role">Agentic AI Engineer | Multi-Agent Orchestration, Voice Agents &amp; Browser Automation</span>
+  <p class="sub">A team of 17 AI agents, each with one job, that takes a single chat or phone request (“make 3 videos for niche 2 on this topic” or “make 3 ad variations for this product”) and hands the work from research to script, voice, video, edit and quality check. Nothing goes live until the owner approves it, by Slack button or by voice.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: 17-agent AI content and UGC ad studio">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>Multi-agent content &amp; ad production system</b></div><div class="fact"><span>Agents</span><b>17, coordinated by a LangGraph supervisor</b></div><div class="fact"><span>Voice &amp; browser</span><b>Vapi, Retell AI, Playwright, browser-use</b></div><div class="fact"><span>Output</span><b>4 niches on 5 platforms + UGC ads in 9:16, 1:1, 4:5</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/agent-studio-architecture.png" target="_blank" rel="noopener"><img src="../images/agent-studio-architecture.png" alt="Architecture of the 17-agent studio: a command layer with an orchestrator, a Vapi voice command agent and a Retell client brief agent; research agents including a Playwright ad library browser agent; script, hook and compliance agents; voiceover, storyboard, character consistency and video generation agents; edit, thumbnail and QA agents; an owner approval gate, a publisher agent and client ad delivery; plus a shared layer for job state, client separation, model routing, tracing and testing" loading="eager"><span class="cap">Architecture: 17 agents in six stages, the typed handoff between each stage and the shared layer every agent uses.</span></a><a class="figure" href="../images/agent-studio-run-console.png" target="_blank" rel="noopener"><img src="../images/agent-studio-run-console.png" alt="A Slack channel where the owner asks for 3 personal finance videos and each agent posts its handoff with links to research, scripts, voiceovers, clips and previews, next to a run console listing all 17 agents with status, timeline, model and output for the run" loading="lazy"><span class="cap">One run from chat: each agent reports its handoff with links, and the console shows every agent’s status, retries and output.</span></a><a class="figure" href="../images/agent-studio-voice-browser-agents.png" target="_blank" rel="noopener"><img src="../images/agent-studio-voice-browser-agents.png" alt="Three panels: a Vapi voice call where the owner checks a hook, approves a run and starts an ad job through function calls; a Retell intake call that turns a client conversation into a structured brief with banned claims and a client workspace; and a Playwright browser agent searching Meta Ad Library and TikTok Creative Center and extracting long-running ads and their hooks" loading="lazy"><span class="cap">Voice agents (Vapi, Retell) and the Playwright browser agent at work.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>A creator was launching four content niches and also wanted short UGC-style ads for their own offers and, later, for clients. Doing it by hand meant researching what performs, writing scripts, recording voice, generating video with a consistent character, editing, captioning, cutting vertical versions and posting to five platforms, for every video. One general AI tool could not do all of that reliably. They wanted a small team of bots, each with its own job, that they could run from chat and watch step by step, without anything posting before they approved it.</p>
+      <h2>The solution</h2>
+      <p>I designed and built a multi-agent system of 17 specialised agents. A LangGraph supervisor agent plans each job and hands work from one agent to the next through typed JSON artifacts on a Supabase job board, so every step can be retried or re-run on its own. Each agent posts its handoff to Slack with links to the script, voice and video as they are ready. Two voice agents sit on top: a Vapi agent lets the owner start jobs, hear progress and approve drafts by phone, and a Retell agent runs intake calls with new ad clients and sets up their workspace. Where platforms have no full API, such as Meta Ad Library and TikTok Creative Center, a Playwright browser agent does the research in a real browser.</p>
+      <h2>The 17 agents</h2>
+      <ol class="flow">
+        <li><b>Command layer (agents 1 to 3)</b>The orchestrator turns a chat request into a job graph and supervises the run. The Vapi voice command agent exposes the same actions by phone through function calls (status, read script, approve, create job). The Retell client brief agent interviews new ad clients and writes a structured brief with offer, audience, proof and banned claims.</li>
+        <li><b>Research (agents 4 to 6)</b>The trend agent finds top-performing videos per niche on YouTube, TikTok and Reels. The news agent collects fresh sources with URLs. The ad library browser agent uses Playwright and browser-use to search, filter and scroll Meta Ad Library and TikTok Creative Center, and Claude vision reads each long-running ad’s hook.</li>
+        <li><b>Script (agents 7 to 9)</b>The writer drafts in each niche’s style pack, or a 30-second UGC ad script. The hook agent writes five hooks and scores them against the research. The fact and compliance agent checks every claim against sources and blocks banned ad claims.</li>
+        <li><b>Voice and video (agents 10 to 13)</b>ElevenLabs voiceover with one fixed voice per niche and client, a storyboard agent that times shots to the audio, a character consistency agent that uses the owner’s character sheets and reference images and checks every clip for drift, and a video agent that routes each shot to Kling or Veo 3 through fal.ai, with lip sync for UGC talking shots.</li>
+        <li><b>Edit and QA (agents 14 to 16)</b>Remotion and FFmpeg assemble the video with word-timed captions from Whisper. A format agent makes thumbnails, Shorts, TikTok and Reels cuts, and ads in 9:16, 1:1 and 4:5. The QA agent watches the finished file with Gemini and sends problems back to the agent that caused them.</li>
+        <li><b>Approval and delivery (agent 17)</b>The owner approves, edits or rejects in Slack or by voice. The publisher agent then posts to YouTube, TikTok, Instagram, Facebook and X, with a Playwright fallback where an API is limited. Ads are never posted: finished files go to that client’s own Drive folder.</li>
+      </ol>
+      <h2>Agent orchestration</h2>
+      <ul class="ticks"><li>LangGraph supervisor with a typed state per job and a handoff contract between every agent</li><li>Supabase job board: each handoff, artifact and decision is a row, so runs are resumable and auditable</li><li>Parallel branches: three videos move through the pipeline at the same time</li><li>Targeted retries: a QA failure goes back only to the agent that made the error, not the whole run</li><li>Model router across Claude, GPT and Gemini per task, with failover to a second provider</li><li>Every agent step traced in Langfuse with model, tokens, cost and time</li></ul>
+      <h2>Voice agents</h2>
+      <ul class="ticks"><li>Vapi agent with Deepgram speech-to-text and an ElevenLabs voice, calling the orchestrator’s API as tools</li><li>Approve, reject or start jobs by phone, with every voice decision logged against the job</li><li>Retell AI intake agent with a post-call webhook that writes the brief and creates the client workspace</li><li>Banned claims from the call passed straight to the compliance agent</li></ul>
+      <h2>Browser agents</h2>
+      <ul class="ticks"><li>Playwright for reliable, scripted steps; browser-use with Claude for pages that change layout</li><li>Meta Ad Library and TikTok Creative Center research: filters, infinite scroll, ad run time and hook extraction</li><li>Posting fallback for platforms with limited APIs, using saved sessions in the owner’s own accounts</li><li>Playwright end-to-end tests on the run console before every release</li></ul>
+      <h2>Content and ads side by side</h2>
+      <ul class="ticks"><li>One pipeline, two job types: content jobs end in posting, ad jobs end in file delivery</li><li>Each client has its own workspace, brand kit, voice, characters and Drive folder, so files never mix</li><li>Character consistency from the owner’s own assets: character sheets, reference images and face-similarity checks on every clip</li><li>All accounts, API keys and files stay in the owner’s name</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>One chat or voice request produces 3 finished videos, 6 Shorts and 9 thumbnails in under an hour</li><li>About $4 to $6 in API cost per finished video</li><li>Every step visible in Slack with links, and nothing posted without approval</li><li>Handed over with docs and a recorded walkthrough so the owner runs it alone</li></ul>
+      <div class="pager"><a href="webinar-lead-automation.html"><span>← Previous project</span><b>Webinar lead automation: round-robin assignment &amp; reminders</b></a><a class="next" href="ai-meta-ad-creatives-automotive.html"><span>Next project →</span><b>Research-led AI Meta ad creatives for an automotive accessories brand</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>Python</span><span>LangGraph</span><span>Anthropic Claude</span><span>OpenAI API</span><span>Google Gemini</span><span>Vapi</span><span>Retell AI</span><span>Playwright</span><span>browser-use</span><span>ElevenLabs</span><span>Deepgram</span><span>Kling</span><span>Veo 3</span><span>fal.ai</span><span>Remotion</span><span>FFmpeg</span><span>Whisper</span><span>Supabase</span><span>Langfuse</span><span>Slack API</span><span>YouTube Data API</span><span>Meta Graph API</span></div></div>
+      <div class="side-card"><h3>What this shows</h3><div class="chips"><span>Multi-agent orchestration</span><span>Agent handoffs</span><span>Voice AI agents</span><span>Browser agents</span><span>Human-in-the-loop</span><span>AI video pipelines</span></div></div>
+      <div class="side-card dark"><h3>Need something similar?</h3><p>Tell me what you want your agents to do and I’ll reply with the simplest setup that gets it done.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: 17-agent AI content and UGC ad studio">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="multi-agent-rfp-response-assistant.html"><img src="../images/rfp-agents-architecture.png" alt="" loading="lazy"><div><span>AI agents · RAG</span><b>Multi-agent RFP response assistant with RAG and multi-LLM routing</b><p>Four agents read an RFP, search company documents, draft cited answers and fact-check every claim.</p></div></a><a class="more-card" href="ai-meta-ad-creatives-automotive.html"><img src="../images/meta-ads-system.png" alt="" loading="lazy"><div><span>AI ad creatives</span><b>Research-led AI Meta ad creatives for an automotive accessories brand</b><p>Ad Library research, written hypotheses and AI image and video ads with a 7-day readout.</p></div></a><a class="more-card" href="ai-video-scheduling-system.html"><img src="../images/video-scheduling-architecture.png" alt="" loading="lazy"><div><span>Content automation</span><b>AI video scheduling system for LinkedIn, YouTube, Facebook &amp; Instagram</b><p>Videos transcribed, captioned in the brand voice, approved and scheduled to four platforms.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+</script>
+</body>
+</html>

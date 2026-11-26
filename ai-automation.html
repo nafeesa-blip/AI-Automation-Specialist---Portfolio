@@ -26,12 +26,28 @@
     <div class="fact"><span>Workflow tools</span><b>n8n, Make, Zapier, Apps Script</b></div>
     <div class="fact"><span>AI models</span><b>OpenAI, Claude, Gemini</b></div>
     <div class="fact"><span>Integrations</span><b>HubSpot, Salesforce, Slack, Gmail, Sheets, REST APIs</b></div>
-    <div class="fact"><span>Case studies</span><b>19 projects below</b></div>
+    <div class="fact"><span>Case studies</span><b>20 projects below</b></div>
   </div>
 </header>
 <main>
 <section id="projects">
   <span class="kicker">Case studies</span><h2>Selected projects</h2><p class="lead">Real workflows, clear thinking, useful outcomes. Click any project to see the full details.</p>
+  <article class="proj">
+    <div class="shot">
+      <div class="stack">
+        <button type="button" aria-label="Open the 17-agent studio architecture" data-zoom><img src="images/agent-studio-architecture.png" alt="Architecture of the 17-agent studio: orchestrator, Vapi and Retell voice agents, research agents with a Playwright browser agent, script, voice, video, edit and QA agents, an owner approval gate and a publisher agent" loading="lazy"></button>
+        <button type="button" aria-label="Open the agent run console" data-zoom><img src="images/agent-studio-run-console.png" alt="Slack channel with each agent posting its handoff and links, next to a run console showing the status, timeline and output of all 17 agents" loading="lazy"></button>
+      </div>
+      <small>Architecture and one live run. Open the project for the voice and browser agents.</small>
+    </div>
+    <div>
+      <h3>17-agent AI content and UGC ad studio with voice and browser agents</h3>
+      <div class="role">Agentic AI Engineer | Multi-Agent Orchestration, Voice Agents &amp; Browser Automation</div>
+      <p>A team of 17 AI agents that turns one chat or phone request into finished videos for four content niches, or 30-second UGC ads for clients. A LangGraph supervisor hands the work from research to script, voice, video, edit and QA through typed handoffs on a Supabase job board, and every agent reports its step in Slack with links. A Vapi voice agent lets the owner approve or start jobs by phone, a Retell agent runs client intake calls, and a Playwright browser agent researches Meta Ad Library and TikTok Creative Center. Nothing posts without the owner’s approval.</p>
+      <h4>Built with</h4>
+      <div class="chips"><span>LangGraph</span><span>Anthropic Claude</span><span>Vapi</span><span>Retell AI</span><span>Playwright</span><span>ElevenLabs</span><span>Remotion</span><span>Supabase</span></div><a class="project-open" href="projects/multi-agent-ai-content-ad-studio.html">View project</a>
+    </div>
+  </article>
   <article class="proj rev">
     <div class="shot">
       <div class="stack">
@@ -335,7 +351,7 @@ document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(
 document.querySelectorAll('[data-toggle]').forEach(function(b){b.onclick=function(){var a=document.getElementById(b.dataset.toggle);var off=a.classList.toggle('off');b.textContent=off?'Show labels':'Hide labels'}});
 </script>
 <script>
-var PG=["projects/ai-meta-ad-creatives-automotive.html", "projects/reading-comprehension-dataset-generation.html", "projects/ai-marketing-automation-system.html", "projects/ai-video-scheduling-system.html", "projects/hiring-trigger-lead-system.html", "projects/shopify-rag-support-chatbot.html", "projects/multi-agent-rfp-response-assistant.html", "projects/mobile-app-data-extraction-pipeline.html", "projects/illinois-hoa-nonprofit-officer-dataset.html", "projects/county-records-lead-pipeline.html", "projects/contractor-license-scraper.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
+var PG=["projects/multi-agent-ai-content-ad-studio.html", "projects/ai-meta-ad-creatives-automotive.html", "projects/reading-comprehension-dataset-generation.html", "projects/ai-marketing-automation-system.html", "projects/ai-video-scheduling-system.html", "projects/hiring-trigger-lead-system.html", "projects/shopify-rag-support-chatbot.html", "projects/multi-agent-rfp-response-assistant.html", "projects/mobile-app-data-extraction-pipeline.html", "projects/illinois-hoa-nonprofit-officer-dataset.html", "projects/county-records-lead-pipeline.html", "projects/contractor-license-scraper.html", "projects/ai-lead-intelligence-crm-automation.html", "projects/ai-recruiter-outreach-agent.html", "projects/business-research-strategic-analysis.html", "projects/ai-spot-the-difference-dataset.html", "projects/windows-invoice-generator.html", "projects/payroll-automation-freee-hr.html", "projects/crm-lead-scoring-follow-up.html", "projects/webinar-lead-automation.html"];
 document.querySelectorAll('#projects .proj').forEach(function(c,i){c.addEventListener('click',function(e){if(e.target.closest('a'))return;location.href=PG[i]})});
 </script>
 </body>

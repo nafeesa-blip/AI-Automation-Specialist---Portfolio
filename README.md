@@ -32,6 +32,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Walmart Marketplace listing optimization | `projects/walmart-marketplace-listing-optimization.html` |
 | eBay listing optimization | `projects/ebay-listing-optimization.html` |
 | Etsy listing SEO optimization | `projects/etsy-listing-seo-optimization.html` |
+| 17-agent AI content & UGC ad studio (multi-agent orchestration, Vapi & Retell voice agents, Playwright browser agents) | `projects/multi-agent-ai-content-ad-studio.html` |
 | AI Meta ad creatives (automotive accessories: research, hypotheses, image & video ads) | `projects/ai-meta-ad-creatives-automotive.html` |
 | Reading comprehension dataset (1.5M Q&A) | `projects/reading-comprehension-dataset-generation.html` |
 | AI marketing automation system (tour operator) | `projects/ai-marketing-automation-system.html` |
