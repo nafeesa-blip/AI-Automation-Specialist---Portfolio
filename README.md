@@ -47,6 +47,7 @@ Every project has its own page, so you can send a client the link to just that p
 | Illinois condo & HOA corporation dataset (OpenCorporates, IL SOS, OCR) | `projects/illinois-hoa-nonprofit-officer-dataset.html` |
 | County records lead pipeline (Lis Pendens & probate) | `projects/county-records-lead-pipeline.html` |
 | State contractor license scraper | `projects/contractor-license-scraper.html` |
+| Excel-to-GIS infrastructure asset map (ArcGIS, AI column mapping, plain-English search) | `projects/excel-gis-infrastructure-asset-map.html` |
 | AI lead intelligence & CRM automation | `projects/ai-lead-intelligence-crm-automation.html` |
 | AI recruiter outreach agent | `projects/ai-recruiter-outreach-agent.html` |
 | Business research & strategic analysis | `projects/business-research-strategic-analysis.html` |

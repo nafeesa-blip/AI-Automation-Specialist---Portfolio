@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Excel-to-GIS infrastructure asset map with AI data checks &amp; plain-English search | Nafeesa A. Portfolio</title>
+<meta name="description" content="An ArcGIS web map fed by the Excel workbooks a public works team already uses: AI column mapping, row-by-row checks, geocoding, change-only sync to feature layers, filters, search, a dashboard and plain-English map questions.">
+<meta property="og:title" content="Excel-to-GIS infrastructure asset map with AI data checks &amp; plain-English search | Nafeesa A. Portfolio">
+<meta property="og:description" content="An ArcGIS web map fed by the Excel workbooks a public works team already uses: AI column mapping, row-by-row checks, geocoding, change-only sync to feature layers, filters, search, a dashboard and plain-English map questions.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232563eb%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><a href="../index.html" style="text-decoration:none"><b>Nafeesa A.</b></a><div><a class="l" href="../index.html#services">Services</a><a class="l" href="../ai-automation.html" aria-current="page">AI automation</a><a class="l" href="../data-annotation.html">Data annotation</a><a class="l" href="../ecommerce-listings.html">E-commerce listings</a><a class="l" href="../seo.html">SEO</a><a class="cta" href="../index.html#contact">Let’s talk</a></div></nav>
+<header class="page-hero">
+  <div class="crumbs"><a href="../index.html">Home</a><span>/</span><a href="../ai-automation.html">AI automation</a><span>/</span><span>Excel-to-GIS asset map</span></div>
+  <span class="kicker">Case study</span>
+  <h1>Excel-to-GIS infrastructure asset map with AI data checks &amp; plain-English search</h1>
+  <span class="role">GIS &amp; Automation Developer | ArcGIS, Python &amp; AI</span>
+  <p class="sub">A public works team managed thousands of assets in Excel, spread across workbooks that each crew laid out its own way. I turned those spreadsheets into one live, searchable map without asking anyone to stop using Excel.</p>
+  <div class="hero-row"><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Excel to GIS map">Discuss a similar project →</a><button class="btn ghost copy-link" type="button" data-copy>Copy page link</button></div>
+  <div class="facts"><div class="fact"><span>Type</span><b>Data sync + interactive web map</b></div><div class="fact"><span>Stack</span><b>ArcGIS Online, Python, Claude API</b></div><div class="fact"><span>Source</span><b>9 Excel workbooks on SharePoint</b></div><div class="fact"><span>Data</span><b>Demonstration with sample data</b></div></div>
+</header>
+<main>
+<section class="tight white"><div class="gallery"><a class="figure" href="../images/gis-asset-map-arch.png" target="_blank" rel="noopener"><img src="../images/gis-asset-map-arch.png" alt="Architecture in three stages: team Excel registers watched for changes, AI column mapping and row validation; geocoding, change-only publishing to ArcGIS hosted feature layers and a sync log; then a web map app, plain-English map questions, a dashboard and export back to Excel" loading="eager"><span class="cap">Architecture: clean the spreadsheets, put every asset on the map, then view, search and analyse.</span></a><a class="figure" href="../images/gis-asset-map-map.png" target="_blank" rel="noopener"><img src="../images/gis-asset-map-map.png" alt="Web map app with layer toggles and counts, condition and inspection filters, an Ask the map box that turns a plain-English question into a layer filter, water mains coloured by condition, clustered points and a hydrant popup with condition, inspection dates, owner team and the source spreadsheet row" loading="lazy"><span class="cap">The web map: layers, filters, search, popups and plain-English questions.</span></a><a class="figure" href="../images/gis-asset-map-sync.png" target="_blank" rel="noopener"><img src="../images/gis-asset-map-sync.png" alt="Sync report with 9 workbooks watched, 18,428 assets on the map, 312 rows changed today, 2,904 assets located by geocoding and 17 rows held for review, plus an AI column mapping table with confidence scores and a list of held rows with their issues" loading="lazy"><span class="cap">Every sync: AI column mapping with confidence scores and rows held back for their owners.</span></a></div></section>
+<section>
+  <div class="cs-grid">
+    <div class="cs-main">
+      <h2>The challenge</h2>
+      <p>The team’s asset records lived in Excel: one workbook for hydrants, another for valves, separate ones for each area’s water mains, pump stations and streetlights. Each crew used its own headers, some rows had coordinates and others only a street address, and dates and condition scores were typed in different ways. To answer a simple question like “which old mains near overdue hydrants need attention?”, someone had to open several files and piece the answer together by hand. Moving everything into a new system was not an option, because the crews were comfortable with Excel and kept it up to date.</p>
+      <h2>The solution</h2>
+      <p>I kept Excel as the place where data is edited and built everything else around it. A sync job notices when a workbook is saved, uses AI to match its columns to one shared asset schema, checks every row, finds a location for rows without coordinates and pushes only the changed rows to ArcGIS hosted feature layers. On top sits a web map where staff can switch layers, filter, search, click any asset for its details, ask questions in plain English and export results back to Excel. A dashboard shows condition and inspection status for whatever area is on screen.</p>
+      <h2>How it works</h2>
+      <ol class="flow"><li><b>Watch the workbooks</b>n8n listens for changes to the registers on SharePoint and OneDrive through Microsoft Graph, and a nightly run re-checks every file in full.</li><li><b>Map the columns with AI</b>The Claude API reads each sheet’s headers and a few sample rows and maps them to the shared schema with a confidence score. High-confidence matches are saved per workbook; anything uncertain is sent to the sheet owner to confirm once.</li><li><b>Check every row</b>pandas and Pydantic check asset IDs, duplicates, dates, condition scores and coordinate ranges. Simple problems such as dates typed as text are fixed automatically, and anything else is held back with the exact row and reason.</li><li><b>Find each location</b>Rows with coordinates are converted from the local grid with pyproj. Rows with only an address or a street intersection are geocoded with the ArcGIS geocoding service, and the result is cached.</li><li><b>Publish only the changes</b>The ArcGIS API for Python compares each row with the feature layer and adds, updates or retires only what changed, one layer per asset type.</li><li><b>Keep a history</b>Every sync is logged in PostgreSQL with the workbook, row, old and new values, so any change on the map can be traced back to the spreadsheet.</li><li><b>View and ask</b>A web app built with the ArcGIS Maps SDK for JavaScript offers layer toggles, filters, search, clustering, popups and export. Plain-English questions are turned into layer filters by the Claude API and checked against a list of allowed fields before they run.</li></ol>
+      <h2>Technical challenges and how they were solved</h2>
+      <ul class="ticks"><li>Nine different sheet layouts: AI column mapping saved per workbook, so it only runs again when headers change</li><li>Missing or mixed coordinates: grid conversion where coordinates exist, geocoding with caching where they do not</li><li>Bad rows reaching the map: row checks that hold a record back instead of publishing it, with the reason sent to its owner</li><li>Slow full reloads: change-only updates, so a normal save reaches the map in under a minute</li><li>Unsafe AI queries: generated filters are limited to known fields and operators and are never run as free SQL</li></ul>
+      <h2>Results</h2>
+      <ul class="ticks"><li>About 18,400 assets across five asset types on one map, updated within a minute of a spreadsheet save</li><li>Around 2,900 assets that only had an address now have a location</li><li>Duplicate IDs and impossible dates are caught before they reach the map, not months later</li><li>Questions that took an afternoon of spreadsheet work are answered in seconds on the map</li><li>Crews still edit in Excel, so there was no new tool to learn and no data entry twice</li></ul>
+      <p class="note">Demonstration build with sample data. Asset IDs, street names and workbook names in the images are fictional.</p>
+      <div class="pager"><a href="contractor-license-scraper.html"><span>← Previous project</span><b>State contractor license scraper with AI enrichment &amp; weekly sales signals</b></a><a class="next" href="ai-lead-intelligence-crm-automation.html"><span>Next project →</span><b>AI-powered lead intelligence &amp; CRM automation</b></a></div>
+    </div>
+    <aside class="cs-side">
+      <div class="side-card"><h3>Tools and technologies</h3><div class="chips"><span>ArcGIS Online</span><span>ArcGIS API for Python</span><span>ArcGIS Maps SDK for JavaScript</span><span>ArcGIS Dashboards</span><span>ArcGIS geocoding</span><span>Python</span><span>pandas</span><span>openpyxl</span><span>Pydantic</span><span>pyproj</span><span>Claude API</span><span>n8n</span><span>Microsoft Graph API</span><span>PostgreSQL</span></div></div>
+      <div class="side-card dark"><h3>Data stuck in spreadsheets?</h3><p>Send me a sample of your Excel files and tell me what you want to see. I’ll show you how it can become a map or dashboard that keeps itself up to date.</p><a class="btn" href="mailto:nafeesa.bizprospex@gmail.com?subject=Project enquiry: Excel to GIS map">Start a project</a></div>
+    </aside>
+  </div>
+</section>
+<section class="white">
+  <span class="kicker">More work</span>
+  <h2>Other projects</h2>
+  <div class="more-grid"><a class="more-card" href="contractor-license-scraper.html"><img src="../images/contractor-license-architecture.png" alt="" loading="lazy"><div><span>Web scraping · AI enrichment</span><b>State contractor license scraper with AI enrichment &amp; weekly sales signals</b><p>About 287,000 licenses re-checked every week, with bond, insurance and status changes turned into sales signals.</p></div></a><a class="more-card" href="county-records-lead-pipeline.html"><img src="../images/county-records-architecture.png" alt="" loading="lazy"><div><span>County records · OCR + AI</span><b>County records lead pipeline: Lis Pendens &amp; probate filings matched to property data</b><p>Daily new filings from five county clerk sites, read with OCR and AI, matched to property appraiser records and scored as leads.</p></div></a><a class="more-card" href="ai-lead-intelligence-crm-automation.html"><img src="../images/ai-lead-research-crm-enrichment.png" alt="" loading="lazy"><div><span>n8n · Lead generation</span><b>AI-powered lead intelligence &amp; CRM automation</b><p>An n8n pipeline that finds, verifies, enriches and qualifies leads, then syncs them to HubSpot.</p></div></a></div>
+</section>
+</main>
+<footer><span>© <span id="y"></span> Nafeesa A. AI Automation Specialist.</span><div><a class="pill" href="../index.html" style="text-decoration:none">Home</a><a class="pill" href="mailto:nafeesa.bizprospex@gmail.com" style="text-decoration:none">Email me</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar'),nav=document.getElementById('nav'),R=document.documentElement;
+function onScroll(){var h=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var t=b.textContent;function done(){b.textContent='Link copied';setTimeout(function(){b.textContent=t},1800)}
+ if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(done,function(){prompt('Copy this link',location.href)})}else{prompt('Copy this link',location.href)}}});
+</script>
+</body>
+</html>
